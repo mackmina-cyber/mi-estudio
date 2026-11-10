@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f3a5f">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Mi Estudio</title>
+<style>
+  :root{
+    --bg:#f4f1ea; --card:#ffffff; --ink:#1d2433; --muted:#6b7280; --line:#e5e0d5;
+    --brand:#1f3a5f; --accent:#c0392b; --good:#1e8e5a; --warn:#d97706; --flag:#fff4cc;
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
+  body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+  .wrap{max-width:760px;margin:0 auto;padding:16px 16px 40px}
+  header.top{display:flex;align-items:center;gap:10px;margin:4px 0 16px}
+  header.top h1{font-size:1.35rem;margin:0;flex:1}
+  .back{border:0;background:#fff;border-radius:12px;padding:10px 14px;font-size:1rem;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .subtitle{color:var(--muted);font-size:.92rem;margin:-8px 0 16px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .chip{border:2px solid var(--brand);background:#fff;color:var(--brand);border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer}
+  .chip.on{background:var(--brand);color:#fff}
+  .exam{background:var(--brand);color:#fff;border-radius:var(--radius);padding:18px;margin-bottom:18px}
+  .exam .when{font-size:.85rem;opacity:.85;text-transform:uppercase;letter-spacing:.05em}
+  .exam h2{margin:4px 0 6px;font-size:1.25rem}
+  .exam .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .btn{border:0;border-radius:14px;padding:14px 18px;font-size:1rem;font-weight:700;cursor:pointer}
+  .btn.light{background:#fff;color:var(--brand)}
+  .btn.ghost{background:rgba(255,255,255,.15);color:#fff}
+  .btn.primary{background:var(--brand);color:#fff}
+  .btn.good{background:var(--good);color:#fff}
+  .btn.warn{background:var(--warn);color:#fff}
+  .btn.plain{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .btn:active{transform:scale(.98)}
+  .decks{display:grid;gap:12px;grid-template-columns:1fr}
+  @media(min-width:640px){.decks{grid-template-columns:1fr 1fr}}
+  .deck{background:var(--card);border-radius:var(--radius);padding:16px;cursor:pointer;border:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+  .deck .num{font-size:.8rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .deck h3{margin:0;font-size:1.05rem;line-height:1.3}
+  .deck .meta{color:var(--muted);font-size:.85rem}
+  .tag{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:999px;background:#fde2e1;color:var(--accent)}
+  .tag.grey{background:#eceae4;color:var(--muted)}
+  .bar{height:8px;background:#eceae4;border-radius:999px;overflow:hidden}
+  .bar>i{display:block;height:100%;background:var(--good);border-radius:999px;transition:width .3s}
+  .modes{display:grid;gap:12px;grid-template-columns:1fr}
+  @media(min-width:560px){.modes{grid-template-columns:1fr 1fr 1fr}}
+  .mode{background:#fff;border-radius:var(--radius);padding:18px;border:1px solid var(--line);cursor:pointer;text-align:left;font:inherit;color:inherit}
+  .mode b{display:block;font-size:1.05rem;margin-bottom:4px}
+  .mode span{color:var(--muted);font-size:.88rem}
+  .mode .ico{font-size:1.8rem;display:block;margin-bottom:6px}
+  .progress-line{display:flex;justify-content:space-between;color:var(--muted);font-size:.9rem;margin-bottom:8px}
+  .flash{perspective:1200px;margin:6px 0 16px;cursor:pointer;user-select:none}
+  .flash-inner{position:relative;min-height:min(56vh,440px);transition:transform .45s;transform-style:preserve-3d}
+  .flash.flipped .flash-inner{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;border-radius:22px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:auto}
+  .face.back{transform:rotateY(180deg);background:#fffdf7;border:2px solid var(--good)}
+  .face .lbl{position:absolute;top:14px;left:18px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .face .q{font-size:clamp(1.25rem,4.6vw,1.7rem);font-weight:700;line-height:1.35}
+  .face .a{font-size:clamp(1.05rem,3.9vw,1.35rem);line-height:1.5;text-align:left;width:100%}
+  .face .a ul{margin:0;padding-left:1.2em}
+  .face .hint{position:absolute;bottom:14px;color:var(--muted);font-size:.85rem}
+  .answer-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .answer-row .btn{padding:18px 10px;font-size:1.05rem}
+  .opts{display:grid;gap:10px;margin:14px 0}
+  .opt{background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;text-align:left;font:inherit;font-size:1rem;line-height:1.4;cursor:pointer;color:var(--ink)}
+  .opt.right{border-color:var(--good);background:#e8f6ee}
+  .opt.wrong{border-color:var(--accent);background:#fdecea}
+  .qbox{background:#fff;border-radius:var(--radius);padding:20px;font-size:1.2rem;font-weight:700;line-height:1.4}
+  .done{background:#fff;border-radius:var(--radius);padding:24px;text-align:center}
+  .done .big{font-size:3rem;margin:4px 0}
+  .done .row{display:grid;gap:10px;margin-top:16px}
+  .notes{background:#fff;border-radius:var(--radius);padding:20px;line-height:1.6;font-size:1.02rem}
+  .notes h2{font-size:1.15rem;color:var(--brand);margin:22px 0 8px;border-bottom:2px solid var(--line);padding-bottom:4px}
+  .notes h2:first-child{margin-top:0}
+  .notes h3{font-size:1.02rem;color:var(--accent);margin:16px 0 6px}
+  .notes p{margin:8px 0}
+  .notes ul{margin:6px 0;padding-left:1.3em}
+  .notes .flag{background:var(--flag);border-left:4px solid var(--warn);padding:8px 12px;border-radius:8px;font-size:.92rem;margin:10px 0}
+  .empty{color:var(--muted);text-align:center;padding:30px}
+  .reset{margin-top:24px;text-align:center}
+  .reset button{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:.88rem;cursor:pointer}
+  .confirm{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script src="content.js"></script>
+<script>
+const SUBJECTS = window.SUBJECTS;
+/* =====================================================================
+   MOTOR DE LA APP
+   ===================================================================== */
+const STORE_KEY = "mi-estudio-v1";
+const store = {
+  data: {},
+  load(){ try{ this.data = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }catch(e){ this.data = {}; } },
+  save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(this.data)); }catch(e){} },
+  known(id){ return !!(this.data.known && this.data.known[id]); },
+  setKnown(id, v){ this.data.known = this.data.known || {}; if(v) this.data.known[id] = 1; else delete this.data.known[id]; this.save(); },
+  reset(ids){ if(!this.data.known) return; ids.forEach(id => delete this.data.known[id]); this.save(); }
+};
+store.load();
+
+// Give every card a stable id
+SUBJECTS.forEach(s => s.decks.forEach(d => d.cards.forEach((c, i) => { c.id = d.id + "-" + i; c.deckId = d.id; })));
+
+const state = { subjectId: SUBJECTS[0].id, view: "home", deckIds: [], title: "", session: null, confirmReset: false };
+const app = document.getElementById("app");
+
+const subject = () => SUBJECTS.find(s => s.id === state.subjectId);
+const deckById = id => subject().decks.find(d => d.id === id);
+const cardsFor = ids => ids.flatMap(id => deckById(id).cards);
+const shuffle = arr => { const a = arr.slice(); for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[ch]));
+const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+const answerHTML = a => Array.isArray(a) ? "<ul>" + a.map(x => "<li>" + inline(x) + "</li>").join("") + "</ul>" : "<div>" + inline(a) + "</div>";
+const answerText = a => Array.isArray(a) ? a.join(" · ") : a;
+const knownCount = cards => cards.filter(c => store.known(c.id)).length;
+const pct = cards => cards.length ? Math.round(100 * knownCount(cards) / cards.length) : 0;
+
+function daysUntil(iso){
+  const t = new Date(); t.setHours(0,0,0,0);
+  const d = new Date(iso + "T00:00:00");
+  return Math.round((d - t) / 86400000);
+}
+function whenLabel(iso){
+  const n = daysUntil(iso);
+  if(n === 0) return "Hoy";
+  if(n === 1) return "Mañana";
+  if(n > 1) return "En " + n + " días";
+  return "Ya pasó";
+}
+function fmtDate(iso){
+  const meses = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  const d = new Date(iso + "T00:00:00");
+  return d.getDate() + " " + meses[d.getMonth()] + " " + d.getFullYear();
+}
+
+function go(view, extra){ Object.assign(state, { view, confirmReset: false }, extra || {}); render(); window.scrollTo(0, 0); }
+
+/* ---------- Pantallas ---------- */
+function renderHome(){
+  const s = subject();
+  // Exams without a date stay visible ("Próximo examen") until a date is set
+  const upcoming = s.exams.filter(e => !e.date || daysUntil(e.date) >= 0)
+    .sort((a, b) => (a.date || "9999").localeCompare(b.date || "9999"));
+  let h = `<header class="top"><h1>📚 Mi Estudio</h1></header>`;
+  if(SUBJECTS.length > 1){
+    h += `<div class="chips">` + SUBJECTS.map(x => `<button class="chip ${x.id === s.id ? "on" : ""}" data-subject="${x.id}">${esc(x.name)}</button>`).join("") + `</div>`;
+  }
+  upcoming.forEach(e => {
+    const cards = cardsFor(e.decks);
+    h += `<section class="exam">
+      <div class="when">${e.date ? whenLabel(e.date) + " · " + fmtDate(e.date) : "Próximo examen"}</div>
+      <h2>${esc(e.label)}</h2>
+      <div>${e.decks.length} temas · ${cards.length} tarjetas · ${pct(cards)}% dominado</div>
+      <div class="row">
+        <button class="btn light" data-exam-study="${e.id}">🃏 Estudiar todo</button>
+        <button class="btn ghost" data-exam-quiz="${e.id}">✏️ Examen de práctica</button>
+      </div></section>`;
+  });
+  const examDecks = new Set(upcoming.flatMap(e => e.decks));
+  h += `<div class="decks">` + s.decks.map(d => {
+    const p = pct(d.cards);
+    const tag = examDecks.has(d.id) ? `<span class="tag">Entra en examen</span>` : `<span class="tag grey">No entra en el próximo examen</span>`;
+    return `<article class="deck" data-deck="${d.id}">
+      <div class="num">${esc(d.num)} · ${esc(d.date)}</div>
+      <h3>${esc(d.title)}</h3>
+      <div>${tag}</div>
+      <div class="meta">${d.cards.length} tarjetas · ${p}% dominado</div>
+      <div class="bar"><i style="width:${p}%"></i></div>
+    </article>`;
+  }).join("") + `</div>`;
+  return h;
+}
+
+function renderDeck(){
+  const d = deckById(state.deckIds[0]);
+  const p = pct(d.cards);
+  let h = `<header class="top"><button class="back" data-home>←</button><h1>${esc(d.num)}</h1></header>
+    <p class="subtitle">${esc(d.title)}</p>
+    <div class="progress-line"><span>${knownCount(d.cards)} de ${d.cards.length} dominadas</span><span>${p}%</span></div>
+    <div class="bar" style="margin-bottom:18px"><i style="width:${p}%"></i></div>
+    <div class="modes">
+      <button class="mode" data-study="all"><span class="ico">🃏</span><b>Tarjetas</b><span>Todas, en desorden</span></button>
+      <button class="mode" data-study="pending"><span class="ico">🔁</span><b>Sólo las que faltan</b><span>${d.cards.length - knownCount(d.cards)} por dominar</span></button>
+      <button class="mode" data-quiz><span class="ico">✏️</span><b>Examen de práctica</b><span>Opción múltiple</span></button>
+      <button class="mode" data-notes><span class="ico">📒</span><b>Apuntes</b><span>Tu cuaderno, en limpio</span></button>
+    </div>
+    <div class="reset">`;
+  h += state.confirmReset
+    ? `<div class="confirm">¿Borrar el avance de este tema? <button class="btn warn" data-reset-yes>Sí, borrar</button><button class="btn plain" data-reset-no>No</button></div>`
+    : `<button data-reset>Reiniciar avance de este tema</button>`;
+  return h + `</div>`;
+}
+
+function renderNotes(){
+  const d = deckById(state.deckIds[0]);
+  let body = "", list = [];
+  const flush = () => { if(list.length){ body += "<ul>" + list.join("") + "</ul>"; list = []; } };
+  d.notes.forEach(line => {
+    if(line.startsWith("- ")){ list.push("<li>" + inline(line.slice(2)) + "</li>"); return; }
+    flush();
+    if(line.startsWith("## ")) body += "<h2>" + inline(line.slice(3)) + "</h2>";
+    else if(line.startsWith("### ")) body += "<h3>" + inline(line.slice(4)) + "</h3>";
+    else if(line.startsWith("! ")) body += `<div class="flag">⚠️ ${inline(line.slice(2))}</div>`;
+    else body += "<p>" + inline(line) + "</p>";
+  });
+  flush();
+  return `<header class="top"><button class="back" data-deck-back>←</button><h1>Apuntes</h1></header>
+    <p class="subtitle">${esc(d.title)}</p><div class="notes">${body}</div>`;
+}
+
+function startStudy(ids, title, onlyPending){
+  let cards = cardsFor(ids);
+  if(onlyPending) cards = cards.filter(c => !store.known(c.id));
+  if(!cards.length){ go("empty", { deckIds: ids, title }); return; }
+  go("study", { deckIds: ids, title, session: { queue: shuffle(cards), i: 0, flipped: false, missed: [], right: 0 } });
+}
+
+function renderStudy(){
+  const s = state.session, c = s.queue[s.i];
+  const backTarget = state.deckIds.length === 1 ? "data-deck-back" : "data-home";
+  return `<header class="top"><button class="back" ${backTarget}>←</button><h1>${esc(state.title)}</h1></header>
+    <div class="progress-line"><span>Tarjeta ${s.i + 1} de ${s.queue.length}</span><span>✅ ${s.right} · 🔁 ${s.missed.length}</span></div>
+    <div class="bar"><i style="width:${Math.round(100 * s.i / s.queue.length)}%"></i></div>
+    <div class="flash ${s.flipped ? "flipped" : ""}" data-flip>
+      <div class="flash-inner">
+        <div class="face"><span class="lbl">Pregunta · ${esc(deckById(c.deckId).num)}</span><div class="q">${inline(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div>
+        <div class="face back"><span class="lbl">Respuesta</span><div class="a">${answerHTML(c.a)}</div></div>
+      </div>
+    </div>
+    ${s.flipped
+      ? `<div class="answer-row"><button class="btn warn" data-miss>🔁 Repasar</button><button class="btn good" data-know>✅ Me la sé</button></div>`
+      : `<button class="btn primary" style="width:100%" data-flip>Ver respuesta</button>`}`;
+}
+
+function answerCard(know){
+  const s = state.session, c = s.queue[s.i];
+  store.setKnown(c.id, know);
+  if(know) s.right++; else s.missed.push(c);
+  s.i++; s.flipped = false;
+  if(s.i >= s.queue.length) go("studyDone"); else render();
+}
+
+function renderStudyDone(){
+  const s = state.session, total = s.queue.length;
+  const emoji = s.missed.length === 0 ? "🏆" : s.right / total >= 0.7 ? "💪" : "📖";
+  return `<header class="top"><button class="back" data-home>←</button><h1>${esc(state.title)}</h1></header>
+    <div class="done"><div class="big">${emoji}</div>
+      <h2>${s.right} de ${total} te las sabes</h2>
+      <p>${s.missed.length ? "Te faltan " + s.missed.length + ". ¡Repásalas otra vez!" : "¡Las dominaste todas!"}</p>
+      <div class="row">
+        ${s.missed.length ? `<button class="btn warn" data-redo-missed>🔁 Repasar las ${s.missed.length} que faltaron</button>` : ""}
+        <button class="btn primary" data-restart>🃏 Otra vuelta completa</button>
+        <button class="btn plain" data-home>Inicio</button>
+      </div></div>`;
+}
+
+function startQuiz(ids, title){
+  const pool = cardsFor(ids);
+  const qs = shuffle(pool).slice(0, Math.min(15, pool.length)).map(c => {
+    const others = shuffle(pool.filter(o => o.id !== c.id && answerText(o.a) !== answerText(c.a))).slice(0, 3);
+    return { card: c, options: shuffle([c, ...others]), picked: null };
+  });
+  go("quiz", { deckIds: ids, title, session: { qs, i: 0, score: 0 } });
+}
+
+function renderQuiz(){
+  const s = state.session, item = s.qs[s.i];
+  const backTarget = state.deckIds.length === 1 ? "data-deck-back" : "data-home";
+  const opts = item.options.map((o, k) => {
+    let cls = "";
+    if(item.picked !== null){
+      if(o.id === item.card.id) cls = "right";
+      else if(k === item.picked) cls = "wrong";
+    }
+    return `<button class="opt ${cls}" data-opt="${k}" ${item.picked !== null ? "disabled" : ""}>${inline(answerText(o.a))}</button>`;
+  }).join("");
+  return `<header class="top"><button class="back" ${backTarget}>←</button><h1>Examen de práctica</h1></header>
+    <div class="progress-line"><span>Pregunta ${s.i + 1} de ${s.qs.length}</span><span>Aciertos: ${s.score}</span></div>
+    <div class="bar" style="margin-bottom:14px"><i style="width:${Math.round(100 * s.i / s.qs.length)}%"></i></div>
+    <div class="qbox">${inline(item.card.q)}</div>
+    <div class="opts">${opts}</div>
+    ${item.picked !== null ? `<button class="btn primary" style="width:100%" data-next>${s.i + 1 < s.qs.length ? "Siguiente →" : "Ver resultado"}</button>` : ""}`;
+}
+
+function renderQuizDone(){
+  const s = state.session, n = s.qs.length, cal = Math.round(10 * s.score / n * 10) / 10;
+  return `<header class="top"><button class="back" data-home>←</button><h1>Resultado</h1></header>
+    <div class="done"><div class="big">${cal >= 9 ? "🏆" : cal >= 7 ? "💪" : "📖"}</div>
+      <h2>Calificación: ${cal} / 10</h2>
+      <p>${s.score} de ${n} correctas</p>
+      <div class="row">
+        <button class="btn primary" data-quiz-again>✏️ Otro examen</button>
+        <button class="btn plain" data-home>Inicio</button>
+      </div></div>`;
+}
+
+function renderEmpty(){
+  return `<header class="top"><button class="back" data-home>←</button><h1>${esc(state.title)}</h1></header>
+    <div class="done"><div class="big">🏆</div><h2>¡Ya dominas todas!</h2>
+    <div class="row"><button class="btn primary" data-restart-all>🃏 Repasar todas de nuevo</button><button class="btn plain" data-home>Inicio</button></div></div>`;
+}
+
+function render(){
+  const views = { home: renderHome, deck: renderDeck, notes: renderNotes, study: renderStudy,
+    studyDone: renderStudyDone, quiz: renderQuiz, quizDone: renderQuizDone, empty: renderEmpty };
+  app.innerHTML = views[state.view]();
+}
+
+/* ---------- Eventos ---------- */
+app.addEventListener("click", e => {
+  const t = e.target.closest("button, [data-deck], [data-flip]");
+  if(!t) return;
+  const ds = t.dataset;
+  const s = state.session;
+  const examById = id => subject().exams.find(x => x.id === id);
+
+  if("home" in ds) return go("home");
+  if(ds.subject) return go("home", { subjectId: ds.subject });
+  if(ds.examStudy){ const ex = examById(ds.examStudy); return startStudy(ex.decks, ex.label, false); }
+  if(ds.examQuiz){ const ex = examById(ds.examQuiz); return startQuiz(ex.decks, ex.label); }
+  if(ds.deck) return go("deck", { deckIds: [ds.deck] });
+  if("deckBack" in ds) return go("deck", { deckIds: [state.deckIds[0]] });
+  if(ds.study){ const d = deckById(state.deckIds[0]); return startStudy([d.id], d.num, ds.study === "pending"); }
+  if("quiz" in ds){ const d = deckById(state.deckIds[0]); return startQuiz([d.id], d.num); }
+  if("notes" in ds) return go("notes");
+  if("reset" in ds){ state.confirmReset = true; return render(); }
+  if("resetNo" in ds){ state.confirmReset = false; return render(); }
+  if("resetYes" in ds){ store.reset(deckById(state.deckIds[0]).cards.map(c => c.id)); state.confirmReset = false; return render(); }
+  if("flip" in ds){ if(!s.flipped){ s.flipped = true; render(); } return; }
+  if("know" in ds) return answerCard(true);
+  if("miss" in ds) return answerCard(false);
+  if("redoMissed" in ds) return go("study", { session: { queue: shuffle(s.missed), i: 0, flipped: false, missed: [], right: 0 } });
+  if("restart" in ds || "restartAll" in ds) return startStudy(state.deckIds, state.title, false);
+  if(ds.opt !== undefined){
+    const item = s.qs[s.i]; if(item.picked !== null) return;
+    item.picked = Number(ds.opt);
+    if(item.options[item.picked].id === item.card.id) s.score++;
+    return render();
+  }
+  if("next" in ds){ s.i++; return s.i >= s.qs.length ? go("quizDone") : render(); }
+  if("quizAgain" in ds) return startQuiz(state.deckIds, state.title);
+});
+
+document.addEventListener("keydown", e => {
+  if(state.view !== "study") return;
+  const s = state.session;
+  if(e.key === " " || e.key === "Enter"){ e.preventDefault(); if(!s.flipped){ s.flipped = true; render(); } }
+  else if(s.flipped && e.key === "ArrowRight") answerCard(true);
+  else if(s.flipped && e.key === "ArrowLeft") answerCard(false);
+});
+
+render();
+
+/* App instalable + funciona sin internet. Con internet siempre baja la versión más nueva. */
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").then(reg => {
+    reg.addEventListener("updatefound", () => {
+      const nw = reg.installing;
+      nw && nw.addEventListener("statechange", () => {
+        if (nw.state === "activated" && navigator.serviceWorker.controller) location.reload();
+      });
+    });
+  }).catch(() => {});
+}
+</script>
+</body>
+</html>
