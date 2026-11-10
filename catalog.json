@@ -1,0 +1,30 @@
+{
+ "grades": [
+  "1° Primaria",
+  "2° Primaria",
+  "3° Primaria",
+  "4° Primaria",
+  "5° Primaria",
+  "6° Primaria"
+ ],
+ "guides": [
+  {
+   "id": "6-primaria",
+   "title": "6° Primaria — Exámenes de noviembre",
+   "grade": "6° Primaria",
+   "description": "Historia y Ciencias Naturales, según la guía de examen y los apuntes de libreta.",
+   "updated": "2026-11-10",
+   "file": "guides/6-primaria.json",
+   "subjects": [
+    {
+     "id": "historia",
+     "name": "Historia"
+    },
+    {
+     "id": "naturales",
+     "name": "Ciencias Naturales"
+    }
+   ]
+  }
+ ]
+}

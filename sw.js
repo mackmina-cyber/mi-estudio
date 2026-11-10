@@ -1,7 +1,8 @@
 /* Mi Estudio — network first: with internet it always loads the newest version
    from GitHub; without internet it uses the last saved copy. */
 const CACHE = "mi-estudio";
-const FILES = ["./", "index.html", "content.js", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
+const FILES = ["./", "index.html", "catalog.json", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
+/* Guide files (guides/*.json) are saved automatically the first time they are downloaded. */
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));

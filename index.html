@@ -88,37 +88,48 @@
   .reset{margin-top:24px;text-align:center}
   .reset button{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:.88rem;cursor:pointer}
   .confirm{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center}
+  .guide{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:12px}
+  .guide h3{margin:0 0 4px;font-size:1.05rem}
+  .guide p{margin:0 0 10px;color:var(--muted);font-size:.9rem}
+  .toggle{display:flex;align-items:center;gap:10px;padding:12px;border:2px solid var(--line);border-radius:12px;margin-top:8px;cursor:pointer;font-weight:600;background:#fff;width:100%;font:inherit;text-align:left;color:var(--ink)}
+  .toggle.on{border-color:var(--good);background:#e8f6ee}
+  .toggle .box{width:24px;height:24px;border-radius:6px;border:2px solid var(--muted);display:grid;place-items:center;font-size:.9rem;flex:none}
+  .toggle.on .box{background:var(--good);border-color:var(--good);color:#fff}
+  .icon-btn{border:0;background:#fff;border-radius:12px;padding:10px 12px;font-size:1rem;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+  .sticky-save{position:sticky;bottom:12px;margin-top:16px}
+  .sticky-save .btn{width:100%;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  .msg{background:#fff;border-radius:var(--radius);padding:20px;text-align:center;color:var(--muted)}
+  .group-title{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px}
 </style>
 </head>
 <body>
-<div class="wrap" id="app"></div>
+<div class="wrap" id="app"><div class="msg">Cargando…</div></div>
 
-<script src="content.js"></script>
 <script>
-const SUBJECTS = window.SUBJECTS;
 /* =====================================================================
-   MOTOR DE LA APP
+   MI ESTUDIO — motor de la app
+   Contenido:  catalog.json  → lista de guías de estudio (por grado)
+               guides/*.json → cada guía: materias → temas → tarjetas
+   El alumno se suscribe a una guía y elige sus materias.
    ===================================================================== */
-const STORE_KEY = "mi-estudio-v1";
+"use strict";
+
+/* ---------- Almacenamiento local (avance + suscripciones) ---------- */
 const store = {
-  data: {},
-  load(){ try{ this.data = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }catch(e){ this.data = {}; } },
-  save(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(this.data)); }catch(e){} },
-  known(id){ return !!(this.data.known && this.data.known[id]); },
-  setKnown(id, v){ this.data.known = this.data.known || {}; if(v) this.data.known[id] = 1; else delete this.data.known[id]; this.save(); },
-  reset(ids){ if(!this.data.known) return; ids.forEach(id => delete this.data.known[id]); this.save(); }
+  key: "mi-estudio-v2",
+  data: { known: {}, subs: {}, current: null },
+  load(){
+    try{ const d = JSON.parse(localStorage.getItem(this.key)); if(d) this.data = Object.assign(this.data, d); }catch(e){}
+  },
+  save(){ try{ localStorage.setItem(this.key, JSON.stringify(this.data)); }catch(e){} },
+  known(id){ return !!this.data.known[id]; },
+  setKnown(id, v){ if(v) this.data.known[id] = 1; else delete this.data.known[id]; this.save(); },
+  reset(ids){ ids.forEach(id => delete this.data.known[id]); this.save(); }
 };
 store.load();
 
-// Give every card a stable id
-SUBJECTS.forEach(s => s.decks.forEach(d => d.cards.forEach((c, i) => { c.id = d.id + "-" + i; c.deckId = d.id; })));
-
-const state = { subjectId: SUBJECTS[0].id, view: "home", deckIds: [], title: "", session: null, confirmReset: false };
+/* ---------- Utilidades ---------- */
 const app = document.getElementById("app");
-
-const subject = () => SUBJECTS.find(s => s.id === state.subjectId);
-const deckById = id => subject().decks.find(d => d.id === id);
-const cardsFor = ids => ids.flatMap(id => deckById(id).cards);
 const shuffle = arr => { const a = arr.slice(); for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[ch]));
 const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
@@ -129,34 +140,126 @@ const pct = cards => cards.length ? Math.round(100 * knownCount(cards) / cards.l
 
 function daysUntil(iso){
   const t = new Date(); t.setHours(0,0,0,0);
-  const d = new Date(iso + "T00:00:00");
-  return Math.round((d - t) / 86400000);
+  return Math.round((new Date(iso + "T00:00:00") - t) / 86400000);
 }
 function whenLabel(iso){
   const n = daysUntil(iso);
-  if(n === 0) return "Hoy";
-  if(n === 1) return "Mañana";
-  if(n > 1) return "En " + n + " días";
-  return "Ya pasó";
+  return n === 0 ? "Hoy" : n === 1 ? "Mañana" : n > 1 ? "En " + n + " días" : "Ya pasó";
 }
 function fmtDate(iso){
-  const meses = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  const m = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
   const d = new Date(iso + "T00:00:00");
-  return d.getDate() + " " + meses[d.getMonth()] + " " + d.getFullYear();
+  return d.getDate() + " " + m[d.getMonth()] + " " + d.getFullYear();
 }
+async function getJSON(url){
+  const r = await fetch(url, { cache: "no-store" });
+  if(!r.ok) throw new Error(url);
+  return r.json();
+}
+
+/* ---------- Datos cargados ---------- */
+const data = { catalog: null, guides: {} };   // guides[id] = guía completa
+
+function prepareGuide(g){
+  // ids únicos por guía para que el avance no se mezcle entre guías
+  g.subjects.forEach(s => s.decks.forEach(d => d.cards.forEach((c, i) => {
+    c.id = g.id + "/" + d.id + "-" + i; c.deckId = d.id;
+  })));
+  data.guides[g.id] = g;
+}
+
+async function loadGuide(id){
+  if(data.guides[id]) return data.guides[id];
+  const entry = data.catalog.guides.find(x => x.id === id);
+  if(!entry) return null;
+  const g = await getJSON(entry.file);
+  prepareGuide(g);
+  return g;
+}
+
+/* Materias a las que el alumno está suscrito: [{key, guide, subject}] */
+function mySubjects(){
+  const out = [];
+  Object.entries(store.data.subs).forEach(([gid, sids]) => {
+    const g = data.guides[gid]; if(!g) return;
+    g.subjects.forEach(s => { if(sids.includes(s.id)) out.push({ key: gid + ":" + s.id, guide: g, subject: s }); });
+  });
+  return out;
+}
+
+/* ---------- Estado de pantalla ---------- */
+const state = { view: "home", deckIds: [], title: "", session: null, confirmReset: false, grade: null, draft: null };
+
+const current = () => {
+  const list = mySubjects();
+  return list.find(x => x.key === store.data.current) || list[0] || null;
+};
+const subject = () => current().subject;
+const deckById = id => subject().decks.find(d => d.id === id);
+const cardsFor = ids => ids.flatMap(id => deckById(id).cards);
 
 function go(view, extra){ Object.assign(state, { view, confirmReset: false }, extra || {}); render(); window.scrollTo(0, 0); }
 
-/* ---------- Pantallas ---------- */
-function renderHome(){
-  const s = subject();
-  // Exams without a date stay visible ("Próximo examen") until a date is set
-  const upcoming = s.exams.filter(e => !e.date || daysUntil(e.date) >= 0)
-    .sort((a, b) => (a.date || "9999").localeCompare(b.date || "9999"));
-  let h = `<header class="top"><h1>📚 Mi Estudio</h1></header>`;
-  if(SUBJECTS.length > 1){
-    h += `<div class="chips">` + SUBJECTS.map(x => `<button class="chip ${x.id === s.id ? "on" : ""}" data-subject="${x.id}">${esc(x.name)}</button>`).join("") + `</div>`;
+/* ---------- Pantalla: catálogo de guías (suscripción) ---------- */
+function openCatalog(){
+  // borrador de suscripciones que se edita y se guarda con un botón
+  const draft = {};
+  Object.entries(store.data.subs).forEach(([g, s]) => draft[g] = s.slice());
+  const myGrade = data.catalog.guides.find(x => draft[x.id])?.grade || null;
+  go("catalog", { draft, grade: state.grade || myGrade });
+}
+
+function renderCatalog(){
+  const c = data.catalog;
+  const hasSubs = Object.keys(store.data.subs).length > 0;
+  const gradesWithGuides = c.grades.filter(gr => c.guides.some(x => x.grade === gr));
+  let h = `<header class="top">${hasSubs ? `<button class="back" data-home>←</button>` : ""}<h1>📚 Guías de estudio</h1></header>
+    <p class="subtitle">${hasSubs ? "Cambia tus guías y materias." : "¡Bienvenido! Elige tu grado y las materias que quieres estudiar."}</p>
+    <div class="group-title">Tu grado</div>
+    <div class="chips">` + c.grades.map(gr => {
+      const has = gradesWithGuides.includes(gr);
+      return `<button class="chip ${state.grade === gr ? "on" : ""}" data-grade="${esc(gr)}" ${has ? "" : "disabled style=\"opacity:.4\""}>${esc(gr)}</button>`;
+    }).join("") + `</div>`;
+
+  if(!state.grade){
+    h += `<div class="msg">Toca tu grado para ver sus guías.</div>`;
+  } else {
+    const guides = c.guides.filter(x => x.grade === state.grade);
+    h += `<div class="group-title">Guías de ${esc(state.grade)}</div>`;
+    h += guides.length ? guides.map(g => {
+      const sel = state.draft[g.id] || [];
+      return `<section class="guide"><h3>${esc(g.title)}</h3><p>${esc(g.description || "")}${g.updated ? " · Actualizada " + fmtDate(g.updated) : ""}</p>
+        ${g.subjects.map(s => `<button class="toggle ${sel.includes(s.id) ? "on" : ""}" data-toggle="${g.id}|${s.id}"><span class="box">${sel.includes(s.id) ? "✓" : ""}</span>${esc(s.name)}</button>`).join("")}
+      </section>`;
+    }).join("") : `<div class="msg">Todavía no hay guías para este grado.</div>`;
   }
+  const count = Object.values(state.draft).reduce((n, a) => n + a.length, 0);
+  h += `<div class="sticky-save"><button class="btn primary" data-save-subs ${count ? "" : "disabled style=\"opacity:.5\""}>${count ? "Guardar (" + count + (count === 1 ? " materia" : " materias") + ")" : "Elige al menos una materia"}</button></div>`;
+  return h;
+}
+
+async function saveSubs(){
+  const subs = {};
+  Object.entries(state.draft).forEach(([g, s]) => { if(s.length) subs[g] = s; });
+  store.data.subs = subs; store.save();
+  app.innerHTML = `<div class="msg">Cargando tus materias…</div>`;
+  try{ await Promise.all(Object.keys(subs).map(loadGuide)); }
+  catch(e){ app.innerHTML = `<div class="msg">No se pudo descargar la guía. Revisa tu internet e intenta de nuevo.</div>`; return; }
+  const list = mySubjects();
+  if(!list.find(x => x.key === store.data.current)){ store.data.current = list[0] && list[0].key; store.save(); }
+  go("home");
+}
+
+/* ---------- Pantalla: inicio ---------- */
+function renderHome(){
+  const list = mySubjects(), cur = current(), s = cur.subject;
+  let h = `<header class="top"><h1>📚 Mi Estudio</h1><button class="icon-btn" data-catalog title="Guías">⚙️ Guías</button></header>`;
+  if(list.length > 1){
+    h += `<div class="chips">` + list.map(x => `<button class="chip ${x.key === cur.key ? "on" : ""}" data-subject="${esc(x.key)}">${esc(x.subject.name)}</button>`).join("") + `</div>`;
+  }
+  h += `<p class="subtitle">${esc(cur.guide.title)}</p>`;
+  const upcoming = (s.exams || []).filter(e => !e.date || daysUntil(e.date) >= 0)
+    .sort((a, b) => (a.date || "9999").localeCompare(b.date || "9999"));
   upcoming.forEach(e => {
     const cards = cardsFor(e.decks);
     h += `<section class="exam">
@@ -183,9 +286,9 @@ function renderHome(){
   return h;
 }
 
+/* ---------- Pantalla: tema ---------- */
 function renderDeck(){
-  const d = deckById(state.deckIds[0]);
-  const p = pct(d.cards);
+  const d = deckById(state.deckIds[0]), p = pct(d.cards);
   let h = `<header class="top"><button class="back" data-home>←</button><h1>${esc(d.num)}</h1></header>
     <p class="subtitle">${esc(d.title)}</p>
     <div class="progress-line"><span>${knownCount(d.cards)} de ${d.cards.length} dominadas</span><span>${p}%</span></div>
@@ -194,9 +297,8 @@ function renderDeck(){
       <button class="mode" data-study="all"><span class="ico">🃏</span><b>Tarjetas</b><span>Todas, en desorden</span></button>
       <button class="mode" data-study="pending"><span class="ico">🔁</span><b>Sólo las que faltan</b><span>${d.cards.length - knownCount(d.cards)} por dominar</span></button>
       <button class="mode" data-quiz><span class="ico">✏️</span><b>Examen de práctica</b><span>Opción múltiple</span></button>
-      <button class="mode" data-notes><span class="ico">📒</span><b>Apuntes</b><span>Tu cuaderno, en limpio</span></button>
-    </div>
-    <div class="reset">`;
+      ${d.notes && d.notes.length ? `<button class="mode" data-notes><span class="ico">📒</span><b>Apuntes</b><span>El cuaderno, en limpio</span></button>` : ""}
+    </div><div class="reset">`;
   h += state.confirmReset
     ? `<div class="confirm">¿Borrar el avance de este tema? <button class="btn warn" data-reset-yes>Sí, borrar</button><button class="btn plain" data-reset-no>No</button></div>`
     : `<button data-reset>Reiniciar avance de este tema</button>`;
@@ -220,17 +322,18 @@ function renderNotes(){
     <p class="subtitle">${esc(d.title)}</p><div class="notes">${body}</div>`;
 }
 
+/* ---------- Tarjetas ---------- */
 function startStudy(ids, title, onlyPending){
   let cards = cardsFor(ids);
   if(onlyPending) cards = cards.filter(c => !store.known(c.id));
-  if(!cards.length){ go("empty", { deckIds: ids, title }); return; }
+  if(!cards.length) return go("empty", { deckIds: ids, title });
   go("study", { deckIds: ids, title, session: { queue: shuffle(cards), i: 0, flipped: false, missed: [], right: 0 } });
 }
 
 function renderStudy(){
   const s = state.session, c = s.queue[s.i];
-  const backTarget = state.deckIds.length === 1 ? "data-deck-back" : "data-home";
-  return `<header class="top"><button class="back" ${backTarget}>←</button><h1>${esc(state.title)}</h1></header>
+  const back = state.deckIds.length === 1 ? "data-deck-back" : "data-home";
+  return `<header class="top"><button class="back" ${back}>←</button><h1>${esc(state.title)}</h1></header>
     <div class="progress-line"><span>Tarjeta ${s.i + 1} de ${s.queue.length}</span><span>✅ ${s.right} · 🔁 ${s.missed.length}</span></div>
     <div class="bar"><i style="width:${Math.round(100 * s.i / s.queue.length)}%"></i></div>
     <div class="flash ${s.flipped ? "flipped" : ""}" data-flip>
@@ -266,6 +369,7 @@ function renderStudyDone(){
       </div></div>`;
 }
 
+/* ---------- Examen de práctica ---------- */
 function startQuiz(ids, title){
   const pool = cardsFor(ids);
   const qs = shuffle(pool).slice(0, Math.min(15, pool.length)).map(c => {
@@ -277,16 +381,13 @@ function startQuiz(ids, title){
 
 function renderQuiz(){
   const s = state.session, item = s.qs[s.i];
-  const backTarget = state.deckIds.length === 1 ? "data-deck-back" : "data-home";
+  const back = state.deckIds.length === 1 ? "data-deck-back" : "data-home";
   const opts = item.options.map((o, k) => {
     let cls = "";
-    if(item.picked !== null){
-      if(o.id === item.card.id) cls = "right";
-      else if(k === item.picked) cls = "wrong";
-    }
+    if(item.picked !== null){ if(o.id === item.card.id) cls = "right"; else if(k === item.picked) cls = "wrong"; }
     return `<button class="opt ${cls}" data-opt="${k}" ${item.picked !== null ? "disabled" : ""}>${inline(answerText(o.a))}</button>`;
   }).join("");
-  return `<header class="top"><button class="back" ${backTarget}>←</button><h1>Examen de práctica</h1></header>
+  return `<header class="top"><button class="back" ${back}>←</button><h1>Examen de práctica</h1></header>
     <div class="progress-line"><span>Pregunta ${s.i + 1} de ${s.qs.length}</span><span>Aciertos: ${s.score}</span></div>
     <div class="bar" style="margin-bottom:14px"><i style="width:${Math.round(100 * s.i / s.qs.length)}%"></i></div>
     <div class="qbox">${inline(item.card.q)}</div>
@@ -295,25 +396,22 @@ function renderQuiz(){
 }
 
 function renderQuizDone(){
-  const s = state.session, n = s.qs.length, cal = Math.round(10 * s.score / n * 10) / 10;
+  const s = state.session, n = s.qs.length, cal = Math.round(100 * s.score / n) / 10;
   return `<header class="top"><button class="back" data-home>←</button><h1>Resultado</h1></header>
     <div class="done"><div class="big">${cal >= 9 ? "🏆" : cal >= 7 ? "💪" : "📖"}</div>
-      <h2>Calificación: ${cal} / 10</h2>
-      <p>${s.score} de ${n} correctas</p>
-      <div class="row">
-        <button class="btn primary" data-quiz-again>✏️ Otro examen</button>
-        <button class="btn plain" data-home>Inicio</button>
-      </div></div>`;
+      <h2>Calificación: ${cal} / 10</h2><p>${s.score} de ${n} correctas</p>
+      <div class="row"><button class="btn primary" data-quiz-again>✏️ Otro examen</button><button class="btn plain" data-home>Inicio</button></div></div>`;
 }
 
 function renderEmpty(){
   return `<header class="top"><button class="back" data-home>←</button><h1>${esc(state.title)}</h1></header>
     <div class="done"><div class="big">🏆</div><h2>¡Ya dominas todas!</h2>
-    <div class="row"><button class="btn primary" data-restart-all>🃏 Repasar todas de nuevo</button><button class="btn plain" data-home>Inicio</button></div></div>`;
+    <div class="row"><button class="btn primary" data-restart>🃏 Repasar todas de nuevo</button><button class="btn plain" data-home>Inicio</button></div></div>`;
 }
 
 function render(){
-  const views = { home: renderHome, deck: renderDeck, notes: renderNotes, study: renderStudy,
+  if(state.view !== "catalog" && !current()) { openCatalog(); return; }
+  const views = { catalog: renderCatalog, home: renderHome, deck: renderDeck, notes: renderNotes, study: renderStudy,
     studyDone: renderStudyDone, quiz: renderQuiz, quizDone: renderQuizDone, empty: renderEmpty };
   app.innerHTML = views[state.view]();
 }
@@ -321,13 +419,21 @@ function render(){
 /* ---------- Eventos ---------- */
 app.addEventListener("click", e => {
   const t = e.target.closest("button, [data-deck], [data-flip]");
-  if(!t) return;
-  const ds = t.dataset;
-  const s = state.session;
+  if(!t || t.disabled) return;
+  const ds = t.dataset, s = state.session;
   const examById = id => subject().exams.find(x => x.id === id);
 
+  if("catalog" in ds) return openCatalog();
+  if(ds.grade){ state.grade = ds.grade; return render(); }
+  if(ds.toggle){
+    const [g, sid] = ds.toggle.split("|");
+    const list = state.draft[g] = state.draft[g] || [];
+    const i = list.indexOf(sid); if(i >= 0) list.splice(i, 1); else list.push(sid);
+    return render();
+  }
+  if("saveSubs" in ds) return saveSubs();
   if("home" in ds) return go("home");
-  if(ds.subject) return go("home", { subjectId: ds.subject });
+  if(ds.subject){ store.data.current = ds.subject; store.save(); return go("home"); }
   if(ds.examStudy){ const ex = examById(ds.examStudy); return startStudy(ex.decks, ex.label, false); }
   if(ds.examQuiz){ const ex = examById(ds.examQuiz); return startQuiz(ex.decks, ex.label); }
   if(ds.deck) return go("deck", { deckIds: [ds.deck] });
@@ -342,7 +448,7 @@ app.addEventListener("click", e => {
   if("know" in ds) return answerCard(true);
   if("miss" in ds) return answerCard(false);
   if("redoMissed" in ds) return go("study", { session: { queue: shuffle(s.missed), i: 0, flipped: false, missed: [], right: 0 } });
-  if("restart" in ds || "restartAll" in ds) return startStudy(state.deckIds, state.title, false);
+  if("restart" in ds) return startStudy(state.deckIds, state.title, false);
   if(ds.opt !== undefined){
     const item = s.qs[s.i]; if(item.picked !== null) return;
     item.picked = Number(ds.opt);
@@ -361,18 +467,23 @@ document.addEventListener("keydown", e => {
   else if(s.flipped && e.key === "ArrowLeft") answerCard(false);
 });
 
-render();
+/* ---------- Arranque ---------- */
+(async function start(){
+  try{
+    data.catalog = await getJSON("catalog.json");
+    // quitar suscripciones a guías que ya no existen
+    Object.keys(store.data.subs).forEach(g => { if(!data.catalog.guides.find(x => x.id === g)) delete store.data.subs[g]; });
+    await Promise.all(Object.keys(store.data.subs).map(loadGuide));
+  }catch(e){
+    app.innerHTML = `<div class="msg">No se pudo cargar Mi Estudio. Conéctate a internet la primera vez que lo abras.</div>`;
+    return;
+  }
+  render();
+})();
 
 /* App instalable + funciona sin internet. Con internet siempre baja la versión más nueva. */
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").then(reg => {
-    reg.addEventListener("updatefound", () => {
-      const nw = reg.installing;
-      nw && nw.addEventListener("statechange", () => {
-        if (nw.state === "activated" && navigator.serviceWorker.controller) location.reload();
-      });
-    });
-  }).catch(() => {});
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("sw.js").catch(() => {});
 }
 </script>
 </body>
