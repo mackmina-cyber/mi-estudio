@@ -9,6 +9,20 @@
  ],
  "guides": [
   {
+   "id": "3-primaria",
+   "title": "3° Primaria — Exámenes de noviembre 2026",
+   "grade": "3° Primaria",
+   "description": "Español: secciones Aprendo y Reflexiono sobre la lengua (unidades 1, 2 y 3).",
+   "updated": "2026-11-10",
+   "file": "guides/3-primaria.json",
+   "subjects": [
+    {
+     "id": "espanol",
+     "name": "Español"
+    }
+   ]
+  },
+  {
    "id": "6-primaria",
    "title": "6° Primaria — Exámenes de noviembre 2026",
    "grade": "6° Primaria",

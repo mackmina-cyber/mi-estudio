@@ -1,0 +1,590 @@
+{
+ "id": "3-primaria",
+ "title": "3° Primaria — Exámenes de noviembre 2026",
+ "grade": "3° Primaria",
+ "description": "Español: secciones Aprendo y Reflexiono sobre la lengua (unidades 1, 2 y 3).",
+ "updated": "2026-11-10",
+ "subjects": [
+  {
+   "id": "espanol",
+   "name": "Español",
+   "exams": [
+    {
+     "id": "esp-nov",
+     "date": "",
+     "label": "Examen de Español",
+     "decks": [
+      "e1",
+      "e2",
+      "e3",
+      "e4",
+      "e5",
+      "e6"
+     ]
+    }
+   ],
+   "decks": [
+    {
+     "id": "e1",
+     "num": "Unidad 1 · Aprendo",
+     "date": "22–23 sep 2026",
+     "title": "El comentario de un texto",
+     "cards": [
+      {
+       "q": "¿Para qué sirve el comentario de un texto?",
+       "a": [
+        "Para registrar la información MÁS IMPORTANTE de lo que leímos.",
+        "Para dar nuestra OPINIÓN.",
+        "Para RECOMENDAR (o no) una lectura."
+       ]
+      },
+      {
+       "q": "¿A quién más le sirve un comentario de texto?",
+       "a": "A las personas que quieren saber de qué trata un texto SIN tener que leerlo completo."
+      },
+      {
+       "q": "¿Qué incluye un comentario de lectura?",
+       "a": "Datos de la obra leída y la OPINIÓN de quien la leyó, con una estructura clara para que se entienda."
+      },
+      {
+       "q": "¿Cuáles son las 5 partes de un comentario de texto?",
+       "a": [
+        "1. Título del texto",
+        "2. Quién es el autor y de qué trata",
+        "3. La información más importante",
+        "4. Lo que no quedó claro o lo que te gustaría saber más",
+        "5. Tu opinión"
+       ]
+      },
+      {
+       "q": "¿Qué elemento NO forma parte de un comentario de texto?",
+       "a": "Los datos sobre la VIDA del autor. (Sí van: el título completo y un resumen de lo más importante.)"
+      },
+      {
+       "q": "En «La increíble historia de la torre Eiffel», ¿quién escribió el artículo?",
+       "a": "André Kareli."
+      },
+      {
+       "q": "¿De qué trata «La increíble historia de la torre Eiffel»?",
+       "a": "De la construcción de la torre Eiffel, el mayor símbolo de París."
+      },
+      {
+       "q": "¿Qué quería saber más el autor del comentario sobre la torre Eiffel?",
+       "a": "Qué otras obras construyó el arquitecto Gustave Eiffel, porque también hizo construcciones en MÉXICO."
+      },
+      {
+       "q": "¿Cuál fue la opinión del comentario sobre la torre Eiffel?",
+       "a": "Que el texto es muy interesante y fácil de leer: tiene información importante y está escrito con sencillez."
+      },
+      {
+       "q": "En «Viajar en París», ¿quién es la autora y de qué trata?",
+       "a": "Sonia Medina. Trata de cómo se mueven los millones de personas que recorren París cada día: los medios de transporte."
+      },
+      {
+       "q": "Menciona medios de transporte de París.",
+       "a": [
+        "Sistema RER (de los alrededores al centro)",
+        "Metro",
+        "Autobuses",
+        "Batobús (barco en el río Sena)",
+        "Bicicletas compartidas (Vélib')"
+       ]
+      },
+      {
+       "q": "¿Cómo se llama la tarjeta que sirve para casi todos los transportes de París?",
+       "a": "NAVIGO."
+      }
+     ],
+     "notes": [
+      "## El comentario de un texto (Aprendo)",
+      "Un **comentario de texto** sirve para **registrar la información más importante** que leímos, dar **nuestra opinión** y **recomendar o no** una lectura. También ayuda a quien quiere saber de qué trata un texto sin leerlo completo.",
+      "### Sus partes",
+      "- **1.** Título del texto.",
+      "- **2.** Autor y de qué trata en general.",
+      "- **3.** La información más importante.",
+      "- **4.** Lo que no quedó claro o lo que te gustaría saber más.",
+      "- **5.** La opinión de quien escribe el comentario.",
+      "**No** forman parte del comentario los datos de la vida del autor.",
+      "### Ejemplo del libro: «La increíble historia de la torre Eiffel» (André Kareli)",
+      "Habla de la construcción del mayor símbolo de París. Datos interesantes: fue planeada como atracción **temporal** para una Feria Mundial y tiene **dos restaurantes** con vista de la «Ciudad Luz». Al autor del comentario le gustaría saber qué otras obras hizo **Gustave Eiffel**, que también construyó en **México**. Opinión: interesante, fácil de leer y sencillo.",
+      "! El libro dice Feria Mundial de 1899; en realidad fue en 1889. Para el examen usa lo que diga el libro y la maestra.",
+      "### Su comentario: «Viajar en París» (Sonia Medina)",
+      "Millones de personas recorren París cada día. Para llegar rápido hay: **RER**, **metro**, **autobuses**, **batobús** (barco por el río Sena) y **bicicletas compartidas** (Vélib'). Casi todos se usan con la tarjeta **Navigo**."
+     ]
+    },
+    {
+     "id": "e2",
+     "num": "Unidad 1 · Reflexiono",
+     "date": "29 sep 2026",
+     "title": "La concordancia",
+     "cards": [
+      {
+       "q": "¿Qué es la concordancia?",
+       "a": "Que los sustantivos, adjetivos y artículos de una frase tengan el MISMO GÉNERO y el MISMO NÚMERO."
+      },
+      {
+       "q": "¿Cuáles son los dos GÉNEROS?",
+       "a": [
+        "Masculino: EL edificio sucio",
+        "Femenino: LA calle sucia"
+       ]
+      },
+      {
+       "q": "¿Cuáles son los dos NÚMEROS?",
+       "a": [
+        "Singular (uno): la calle sucia",
+        "Plural (varios): las calles sucias"
+       ]
+      },
+      {
+       "q": "¿Cuál es correcta? «Los amplios parques» o «Las amplios parques»",
+       "a": "LOS AMPLIOS PARQUES."
+      },
+      {
+       "q": "¿Cuál es correcta? «Las amplias avenidas» o «Los amplios avenidas»",
+       "a": "LAS AMPLIAS AVENIDAS."
+      },
+      {
+       "q": "¿Cuál es correcta? «La canción triste» o «El canción tristes»",
+       "a": "LA CANCIÓN TRISTE."
+      },
+      {
+       "q": "¿Cuál es correcta? «El edificio elegante» o «Los edificio elegante»",
+       "a": "EL EDIFICIO ELEGANTE."
+      },
+      {
+       "q": "Completa con «limpio, limpia, limpios, limpias»: El río… / La ciudad…",
+       "a": [
+        "El río LIMPIO",
+        "La ciudad LIMPIA"
+       ]
+      },
+      {
+       "q": "Completa con «limpio, limpia, limpios, limpias»: Unos edificios… / Unas avenidas…",
+       "a": [
+        "Unos edificios LIMPIOS",
+        "Unas avenidas LIMPIAS"
+       ]
+      },
+      {
+       "q": "Forma 2 frases con: los, un, edificios, monumento, antiguo, modernos",
+       "a": [
+        "LOS EDIFICIOS MODERNOS",
+        "UN MONUMENTO ANTIGUO"
+       ]
+      },
+      {
+       "q": "Forma 2 frases con: las, una, fuente, historias, viejas, mágica",
+       "a": [
+        "LAS VIEJAS HISTORIAS",
+        "UNA FUENTE MÁGICA"
+       ]
+      }
+     ],
+     "notes": [
+      "## La concordancia (Reflexiono sobre la lengua)",
+      "Los **sustantivos**, **adjetivos** y **artículos** tienen:",
+      "- **Género:** masculino (**el** edificio sucio) o femenino (**la** calle sucia).",
+      "- **Número:** singular (**la** calle sucia) o plural (**las** calles sucias).",
+      "Cuando escribimos, deben tener el **mismo género y número**. A eso se le llama **concordancia**.",
+      "**Correcto:** los amplios parques · las amplias avenidas. **Incorrecto:** las amplios parques · los amplios avenidas.",
+      "### Ejercicios",
+      "- El río limpio · La ciudad limpia · Unos edificios limpios · Unas avenidas limpias.",
+      "- Los edificios modernos · Un monumento antiguo · Las viejas historias · Una fuente mágica.",
+      "! En el libro escribió «Una historias… mágica» y «Las antiguo monumento». Las frases correctas son las de arriba: repásalas con él."
+     ]
+    },
+    {
+     "id": "e3",
+     "num": "Unidad 1 · Reflexiono",
+     "date": "oct 2026",
+     "title": "Palabras con b y v (familias de palabras)",
+     "cards": [
+      {
+       "q": "¿Cómo te ayudan las familias de palabras a saber si se escribe con b o v?",
+       "a": "Las palabras de una misma familia comparten letras. Si dudas, piensa en otra palabra parecida de la familia."
+      },
+      {
+       "q": "Familia de CABEZA",
+       "a": "Cabecera, cabecilla, encabezar, cabizbajo, cabezón (todas con B)."
+      },
+      {
+       "q": "Familia de VOLVER",
+       "a": "Revolver, envolver, desenvolver (todas con V)."
+      },
+      {
+       "q": "Familia de BOLSA",
+       "a": "Bolsillo, embolsar, reembolsar (todas con B)."
+      },
+      {
+       "q": "¿Ca_allero se escribe con b o v? ¿De qué familia es?",
+       "a": "CABALLERO, con B. Familia de caballo, caballería, caballeriza."
+      },
+      {
+       "q": "¿Na_egante se escribe con b o v? ¿De qué familia es?",
+       "a": "NAVEGANTE, con V. Familia de navegar, nave, navío."
+      },
+      {
+       "q": "¿Cuál NO es de la familia? belleza · embellecer · bello · velludo",
+       "a": "VELLUDO."
+      },
+      {
+       "q": "¿Cuál NO es de la familia? revivir · transcribir · sobrevivir · vivir",
+       "a": "TRANSCRIBIR."
+      },
+      {
+       "q": "¿Cuál NO es de la familia? venir · bienvenida · bendecir · provenir",
+       "a": "BENDECIR."
+      },
+      {
+       "q": "¿Cuál NO es de la familia? cabello · cabellera · excavar · descabellado",
+       "a": "EXCAVAR."
+      }
+     ],
+     "notes": [
+      "## Palabras con b y v (ortografía)",
+      "Igual que las personas de una familia se parecen, las **palabras de una familia comparten letras**. Si no sabes si va b o v, piensa en otra palabra de la misma familia.",
+      "- **Cabeza:** cabecera, cabecilla, encabezar, cabizbajo, cabezón.",
+      "- **Volver:** revolver, envolver, desenvolver.",
+      "- **Bolsa:** bolsillo, embolsar, reembolsar.",
+      "- **Caballo:** caballero, caballería, caballeriza.",
+      "- **Navegar:** navegante, nave, navío.",
+      "### La palabra que no pertenece",
+      "- belleza, embellecer, bello → no pertenece: **velludo**",
+      "- revivir, sobrevivir, vivir → no pertenece: **transcribir**",
+      "- venir, bienvenida, provenir → no pertenece: **bendecir**",
+      "- cabello, cabellera, descabellado → no pertenece: **excavar**",
+      "! El ejercicio de unir palabras de la página de b y v quedó en blanco en el libro."
+     ]
+    },
+    {
+     "id": "e4",
+     "num": "Unidad 2 · Aprendo",
+     "date": "7–11 oct 2026",
+     "title": "El cuento tradicional — «Las hadas»",
+     "cards": [
+      {
+       "q": "¿Qué es un cuento tradicional?",
+       "a": "Una historia que se contaba de BOCA EN BOCA. Ej.: «Las hadas», que Charles Perrault puso por escrito."
+      },
+      {
+       "q": "¿Quién escribió «Las hadas» y de qué país es?",
+       "a": "CHARLES PERRAULT, de FRANCIA."
+      },
+      {
+       "q": "¿Cuáles son los 3 momentos de la trama?",
+       "a": [
+        "INICIO: se presentan los personajes y cómo viven.",
+        "NUDO: la situación cambia y el protagonista tiene un problema.",
+        "DESENLACE: el problema se resuelve."
+       ]
+      },
+      {
+       "q": "¿Qué es el PROTAGONISTA?",
+       "a": "El personaje principal, con VALORES POSITIVOS, que enfrenta un problema."
+      },
+      {
+       "q": "¿Qué es el ANTAGONISTA?",
+       "a": "El personaje que se ENEMISTA con el protagonista."
+      },
+      {
+       "q": "¿Qué personajes suele haber en los cuentos tradicionales?",
+       "a": "Personajes con PODERES MÁGICOS, que a veces ayudan al protagonista y otras veces intentan evitar que alcance su meta."
+      },
+      {
+       "q": "¿En qué lugares ocurren los cuentos tradicionales?",
+       "a": [
+        "Lugares COMUNES: casas, bosques.",
+        "Lugares MÁGICOS o misteriosos: castillos encantados, cuevas del tesoro."
+       ]
+      },
+      {
+       "q": "«Las hadas»: ¿cómo eran las dos hijas?",
+       "a": [
+        "La mayor: igual a su madre, desagradable y orgullosa.",
+        "La menor: dulce y amable, como su padre."
+       ]
+      },
+      {
+       "q": "«Las hadas»: ordena lo que pasó.",
+       "a": [
+        "1. La madre manda a la hija menor por agua.",
+        "2. La hija menor ayuda a una anciana, que es un hada y le da un don.",
+        "3. La madre manda a la hija mayor por agua.",
+        "4. La mujer elegante (el hada) le da a la hija mayor otro don."
+       ]
+      },
+      {
+       "q": "«Las hadas»: ¿qué don recibió la hija menor?",
+       "a": "Cada vez que habla, de su boca salen una FLOR y una PIEDRA PRECIOSA."
+      },
+      {
+       "q": "«Las hadas»: ¿qué don recibió la hija mayor y por qué?",
+       "a": "Por grosera y poco servicial: de su boca salen HIEDRAS VENENOSAS, SERPIENTES o SAPOS."
+      },
+      {
+       "q": "«Las hadas»: ¿cómo terminó la hija menor?",
+       "a": "Su madre la echó de la casa; en el bosque la encontró el PRÍNCIPE y se casó con ella."
+      },
+      {
+       "q": "«Las hadas»: ¿cómo terminó la hija mayor?",
+       "a": "Su propia madre la echó de la casa y quedó sola por el resto de su vida."
+      },
+      {
+       "q": "¿Quién dice: «Por favor, permítame ayudarle»?",
+       "a": "La HIJA MENOR."
+      },
+      {
+       "q": "¿Quién dice: «Hazlo tú si quieres, yo no soy la sirvienta de nadie»?",
+       "a": "La HIJA MAYOR."
+      },
+      {
+       "q": "¿Quién dice: «De tu boca saldrán joyas y piedras preciosas»?",
+       "a": "La ANCIANA (el hada)."
+      },
+      {
+       "q": "¿Quién dice: «Me doy cuenta de que eres muy grosera y poco servicial»?",
+       "a": "La MUJER ELEGANTE (el hada disfrazada de princesa)."
+      },
+      {
+       "q": "¿Quién dice: «Quiero que vayas por agua a la fuente»?",
+       "a": "La MADRE."
+      }
+     ],
+     "notes": [
+      "## El cuento tradicional (Aprendo)",
+      "Un **cuento tradicional** es una historia que se contaba **de boca en boca**. «Las hadas» viene de **Francia**; **Charles Perrault** la puso por escrito.",
+      "### Elementos",
+      "- **Personajes:** el **protagonista** tiene valores positivos y enfrenta un problema; el **antagonista** se enemista con él. Suele haber personajes con **poderes mágicos** que ayudan o estorban.",
+      "- **Lugares:** comunes (casas, bosques) o mágicos y misteriosos (castillos encantados, cuevas del tesoro).",
+      "- **Trama:** **inicio** (se presentan los personajes), **nudo** (aparece el problema) y **desenlace** (se resuelve).",
+      "### Resumen de «Las hadas»",
+      "Una viuda tenía dos hijas: la mayor era orgullosa y grosera como ella; la menor, dulce y amable. La menor iba por agua al manantial, ayudó a una **anciana** que era un **hada**, y recibió el don de que de su boca salieran **flores y piedras preciosas**.",
+      "La madre mandó entonces a la mayor. El hada apareció como una **mujer elegante**; la hija la trató mal y recibió el don de que de su boca salieran **hiedras venenosas, serpientes y sapos**.",
+      "La madre culpó a la menor y la echó; en el bosque la encontró el **príncipe** y se casó con ella. A la mayor también la echaron y quedó **sola** para siempre.",
+      "### Su cuento en el libro (19 oct)",
+      "Eligió «El fantasma de Canterville». Personajes: el fantasma (triste), Virginia (feliz) y los hijos (malos). Lugares: la casa (miedo) y el cementerio."
+     ]
+    },
+    {
+     "id": "e5",
+     "num": "Unidad 2 · Reflexiono",
+     "date": "13 oct 2026",
+     "title": "Sujeto y predicado",
+     "cards": [
+      {
+       "q": "¿De qué partes están formadas siempre las oraciones?",
+       "a": "De un SUJETO y un PREDICADO."
+      },
+      {
+       "q": "¿Qué es el SUJETO?",
+       "a": "Dice QUIÉN hace la acción o DE QUIÉN se dice algo."
+      },
+      {
+       "q": "¿Qué es el PREDICADO?",
+       "a": "Dice la ACCIÓN que se hace o lo que se dice de alguien. Siempre tiene un VERBO CONJUGADO."
+      },
+      {
+       "q": "¿El sujeto siempre va al inicio?",
+       "a": "No. El sujeto y el predicado pueden ir al INICIO o al FINAL. Ej.: «Está muy enfermo (predicado) nuestro perro (sujeto)»."
+      },
+      {
+       "q": "«La pobre anciana pidió un poco de agua.» Sujeto y predicado",
+       "a": [
+        "Sujeto: La pobre anciana",
+        "Predicado: pidió un poco de agua (verbo: PIDIÓ)"
+       ]
+      },
+      {
+       "q": "«La madre era muy grosera.» Sujeto y predicado",
+       "a": [
+        "Sujeto: La madre",
+        "Predicado: era muy grosera (verbo: ERA)"
+       ]
+      },
+      {
+       "q": "«La jarra de agua era muy pesada.» ¿Cuál es el verbo?",
+       "a": "ERA. Predicado: era muy pesada."
+      },
+      {
+       "q": "«El manantial quedaba lejos de la casa.» ¿Cuál es el verbo?",
+       "a": "QUEDABA. Predicado: quedaba lejos de la casa."
+      },
+      {
+       "q": "«Estaba de cacería el príncipe.» ¿Cuál es el sujeto?",
+       "a": "EL PRÍNCIPE (va al final). Predicado: estaba de cacería (verbo: ESTABA)."
+      },
+      {
+       "q": "«Las flores son hermosas siempre.» ¿Cuál es el verbo?",
+       "a": "SON. Predicado: son hermosas siempre."
+      }
+     ],
+     "notes": [
+      "## Sujeto y predicado (Reflexiono sobre la lengua)",
+      "Las oraciones siempre tienen **sujeto** y **predicado**.",
+      "- **Sujeto:** quién hace la acción o de quién se dice algo.",
+      "- **Predicado:** la acción o lo que se dice de alguien. **Siempre tiene un verbo conjugado.**",
+      "Ejemplos: **La pobre anciana** | pidió un poco de agua. · **La madre** | era muy grosera.",
+      "Pueden ir en cualquier orden: Está muy enfermo | **nuestro perro**.",
+      "### Ejercicio (verbo en mayúsculas)",
+      "- La jarra de agua | ERA muy pesada.",
+      "- El manantial | QUEDABA lejos de la casa.",
+      "- ESTABA de cacería | el príncipe.",
+      "- Las flores | SON hermosas siempre."
+     ]
+    },
+    {
+     "id": "e6",
+     "num": "Unidad 2 · Reflexiono",
+     "date": "14 oct 2026",
+     "title": "Palabras con g y j",
+     "cards": [
+      {
+       "q": "¿Qué sonidos puede tener la letra G?",
+       "a": [
+        "FUERTE, como en «gis» (ge, gi).",
+        "SUAVE, como en «gas» (ga, go, gu, gue, gui)."
+       ]
+      },
+      {
+       "q": "¿Qué sonido tiene siempre la letra J?",
+       "a": "Siempre FUERTE, como en «hoja»."
+      },
+      {
+       "q": "¿Cuándo NO suena la U en «gue» y «gui»?",
+       "a": "Normalmente no suena, como en «águila»."
+      },
+      {
+       "q": "¿Cuándo SÍ suena la U en «güe» y «güi»?",
+       "a": "Cuando lleva DIÉRESIS (¨), como en «pingüino»."
+      },
+      {
+       "q": "¿G suave o g fuerte? águila · gol · hamburguesa · regalo",
+       "a": "Todas G SUAVE."
+      },
+      {
+       "q": "¿G suave o g fuerte? colegio · gel · gemelo · energía",
+       "a": "Todas G FUERTE."
+      },
+      {
+       "q": "¿G suave o g fuerte? cigüeña · pingüino · agudo",
+       "a": "Todas G SUAVE."
+      },
+      {
+       "q": "¿G suave o g fuerte? región · registro · congelar",
+       "a": "Todas G FUERTE."
+      },
+      {
+       "q": "Menciona palabras con J del ejercicio.",
+       "a": "Ajo, caja, rojo, reja, lujo, oreja, reloj."
+      },
+      {
+       "q": "Ordena las sílabas: na · sia · gim",
+       "a": "GIMNASIA."
+      },
+      {
+       "q": "Ordena las sílabas: güi · a · ta",
+       "a": "AGÜITA."
+      },
+      {
+       "q": "Ordena las sílabas: güen · ver · za",
+       "a": "VERGÜENZA."
+      },
+      {
+       "q": "Ordena las sílabas: gue · ra · man",
+       "a": "MANGUERA."
+      }
+     ],
+     "notes": [
+      "## Palabras con g y j (ortografía)",
+      "La **g** tiene sonido **fuerte** (gis) o **suave** (gas). La **j** siempre suena **fuerte** (hoja).",
+      "En **gue** y **gui** la u no suena (águila). Sólo suena con **diéresis** (¨): pingüino.",
+      "### Clasificación correcta",
+      "- **G suave:** agudo, águila, cigüeña, gol, hamburguesa, pingüino, regalo.",
+      "- **G fuerte:** colegio, congelar, energía, gel, gemelo, región, registro.",
+      "- **J:** ajo, caja, rojo, reja, lujo, oreja, reloj.",
+      "! En el libro puso colegio y gel en «g suave», y cigüeña, pingüino y regalo en «g fuerte». Lo correcto es la lista de arriba: si la g va antes de e o i suena fuerte.",
+      "### Ordenar sílabas",
+      "gimnasia · guisado · gente · guerra · agüita · guayaba · manguera · vergüenza."
+     ]
+    },
+    {
+     "id": "e7",
+     "num": "Unidades 1 y 2",
+     "date": "6 y 21 oct 2026",
+     "title": "Etimologías (extra)",
+     "cards": [
+      {
+       "q": "¿De qué lengua proviene el español?",
+       "a": "Del LATÍN, una lengua muy antigua. El francés también viene del latín."
+      },
+      {
+       "q": "¿Qué significa «bis»? Da ejemplos.",
+       "a": "DOS. Bisílabo, bicampeón, bicolor."
+      },
+      {
+       "q": "¿Qué significa «búccam»? Da ejemplos.",
+       "a": "BOCA. Bocado, bocanada, boquiabierto."
+      },
+      {
+       "q": "¿Qué significa «videre»? Da ejemplos.",
+       "a": "VER. Vista, visión, video."
+      },
+      {
+       "q": "¿Qué significa «vólvere»? Da ejemplos.",
+       "a": "DAR VUELTA. Volver, revolver, vuelta."
+      },
+      {
+       "q": "¿Qué significa «bicolor»?",
+       "a": "Algo que tiene DOS colores."
+      },
+      {
+       "q": "¿Qué significa «boquiabierto»?",
+       "a": "Con la BOCA abierta."
+      },
+      {
+       "q": "¿Qué significan «brevem», «víam» y «vérbum»?",
+       "a": [
+        "Brevem → breve",
+        "Víam → camino, vía, sendero",
+        "Vérbum → palabra"
+       ]
+      },
+      {
+       "q": "Palabra que expresa la acción en una oración (núcleo del predicado)",
+       "a": "VERBO."
+      },
+      {
+       "q": "Reducción de una palabra en la que se quitan letras",
+       "a": "ABREVIATURA."
+      },
+      {
+       "q": "Trasladarse de un lugar a otro",
+       "a": "VIAJAR."
+      },
+      {
+       "q": "Que se puede llevar a cabo, que tiene camino",
+       "a": "VIABLE."
+      },
+      {
+       "q": "Sentencia, adagio, refrán",
+       "a": "PROVERBIO."
+      }
+     ],
+     "notes": [
+      "## Etimologías",
+      "El español viene del **latín**. Conocer el origen de las palabras ayuda a la ortografía y a entender palabras nuevas.",
+      "- **bis** (dos): bisílabo, bicampeón, bicolor.",
+      "- **búccam** (boca): bocado, bocanada, boquiabierto.",
+      "- **videre** (ver): vista, visión, video.",
+      "- **vólvere** (dar vuelta): volver, revolver, vuelta.",
+      "- **brevem** (breve): abreviar, abreviatura.",
+      "- **víam** (camino): viajar, viable.",
+      "- **vérbum** (palabra): verbo, verbal, adverbio, proverbio.",
+      "! Etimologías no es una sección «Aprendo» ni «Reflexiono», así que puede no venir en el examen. Está como repaso extra."
+     ]
+    }
+   ]
+  }
+ ]
+}
