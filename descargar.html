@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1f3a5f">
+<title>Descargar Mi Estudio</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:#1f3a5f;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{max-width:420px;width:100%;text-align:center}
+  img.logo{width:112px;height:112px;border-radius:26px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+  h1{font-size:2rem;margin:18px 0 6px}
+  p.lead{opacity:.85;margin:0 0 26px;line-height:1.5}
+  .btn{display:block;width:100%;border:0;border-radius:16px;padding:18px;font-size:1.15rem;font-weight:800;cursor:pointer;text-decoration:none}
+  .primary{background:#fff;color:#1f3a5f}
+  .ghost{background:rgba(255,255,255,.14);color:#fff;margin-top:12px;font-weight:600}
+  .steps{background:#fff;color:#1d2433;border-radius:18px;padding:18px 20px;text-align:left;margin-top:18px;line-height:1.6;display:none}
+  .steps b{color:#1f3a5f}
+  .steps ol{margin:8px 0 0;padding-left:1.2em}
+  .done{display:none;background:#1e8e5a;border-radius:16px;padding:16px;font-weight:700;margin-top:12px}
+  ul.feat{list-style:none;padding:0;margin:26px 0 0;opacity:.85;font-size:.95rem;line-height:1.9}
+</style>
+</head>
+<body>
+<main class="card">
+  <img class="logo" src="icon-512.png" alt="">
+  <h1>Mi Estudio</h1>
+  <p class="lead">Tarjetas de estudio y exámenes de práctica para tus materias.</p>
+
+  <button class="btn primary" id="install">⬇️ Descargar app</button>
+  <div class="done" id="done">✅ ¡Listo! Busca «Mi Estudio» en tus apps.</div>
+  <div class="steps" id="steps">
+    <b id="stepsTitle">Para instalarla:</b>
+    <ol id="stepsList"></ol>
+  </div>
+  <a class="btn ghost" href="./">Abrir sin instalar</a>
+
+  <ul class="feat">
+    <li>📚 Elige tu grado y tus materias</li>
+    <li>📶 Funciona sin internet</li>
+    <li>🔄 Se actualiza sola</li>
+  </ul>
+</main>
+<script>
+let deferred = null;
+const $ = id => document.getElementById(id);
+const ua = navigator.userAgent;
+const isIOS = /iPhone|iPad|iPod/.test(ua);
+const isAndroid = /Android/.test(ua);
+const isChrome = /Chrome\//.test(ua) && !/EdgA|OPR|SamsungBrowser/.test(ua);
+const installed = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+
+if (installed) location.replace("./");
+
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferred = e; });
+window.addEventListener("appinstalled", () => { $("install").style.display = "none"; $("steps").style.display = "none"; $("done").style.display = "block"; });
+
+function showSteps(){
+  let steps;
+  if (isIOS) {
+    $("stepsTitle").textContent = "En iPhone (Safari):";
+    steps = ["Toca el botón Compartir ⬆️ abajo.", "Elige «Agregar a inicio».", "Toca «Agregar»."];
+  } else if (isAndroid && !isChrome) {
+    $("stepsTitle").textContent = "Ábrela en Chrome:";
+    steps = ["Copia este enlace: " + location.href, "Pégalo en Google Chrome.", "Toca «Descargar app» otra vez."];
+  } else {
+    $("stepsTitle").textContent = "En Chrome:";
+    steps = ["Toca el menú ⋮ arriba a la derecha.", "Elige «Instalar app» (o «Agregar a pantalla principal»).", "Toca «Instalar»."];
+  }
+  $("stepsList").innerHTML = steps.map(s => "<li>" + s.replace(/[<>&]/g, "") + "</li>").join("");
+  $("steps").style.display = "block";
+}
+
+$("install").addEventListener("click", async () => {
+  if (deferred) {
+    deferred.prompt();
+    const r = await deferred.userChoice;
+    deferred = null;
+    if (r.outcome !== "accepted") showSteps();
+  } else {
+    showSteps();
+  }
+});
+</script>
+</body>
+</html>
