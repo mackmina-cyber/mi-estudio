@@ -5,7 +5,8 @@
   "3° Primaria",
   "4° Primaria",
   "5° Primaria",
-  "6° Primaria"
+  "6° Primaria",
+  "General"
  ],
  "guides": [
   {
@@ -37,6 +38,20 @@
     {
      "id": "naturales",
      "name": "Ciencias Naturales"
+    }
+   ]
+  },
+  {
+   "id": "geografia-general",
+   "title": "Geografía general",
+   "grade": "General",
+   "description": "Capitales de todos los países del mundo, con mapa.",
+   "updated": "2026-11-13",
+   "file": "guides/geografia-general.json",
+   "subjects": [
+    {
+     "id": "capitales",
+     "name": "Capitales del mundo"
     }
    ]
   }

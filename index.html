@@ -100,6 +100,12 @@
   .sticky-save .btn{width:100%;box-shadow:0 4px 14px rgba(0,0,0,.18)}
   .msg{background:#fff;border-radius:var(--radius);padding:20px;text-align:center;color:var(--muted)}
   .group-title{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px}
+  .map{width:100%;margin-top:14px;border-radius:12px;background:#cfe3f1;display:block}
+  .map .land{fill:#efe9dc;stroke:#b9b2a3;stroke-width:.6;vector-effect:non-scaling-stroke}
+  .map .hl{fill:#c0392b;stroke:#7f1d14;stroke-width:1;vector-effect:non-scaling-stroke}
+  .map .dot{fill:#ffd400;stroke:#1d2433;stroke-width:1.5;vector-effect:non-scaling-stroke}
+  .note{margin-top:10px;font-size:.92rem;color:var(--muted);line-height:1.45}
+  .face.back.has-map{justify-content:flex-start;padding-top:42px}
 </style>
 </head>
 <body>
@@ -134,6 +140,17 @@ const shuffle = arr => { const a = arr.slice(); for(let i = a.length - 1; i > 0;
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[ch]));
 const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
 const answerHTML = a => Array.isArray(a) ? "<ul>" + a.map(x => "<li>" + inline(x) + "</li>").join("") + "</ul>" : "<div>" + inline(a) + "</div>";
+function mapSVG(guide, spot){
+  const m = guide && data.maps[guide.map];
+  if(!m || !spot) return "";
+  const [bx, by, bw, bh] = spot.box;
+  const r = Math.max(bw / 70, 1.2);
+  return `<svg class="map" viewBox="${bx} ${by} ${bw} ${bh}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <path class="land" d="${m.all}"/>
+    ${m.paths[spot.id] ? `<path class="hl" d="${m.paths[spot.id]}"/>` : ""}
+    <circle class="dot" cx="${spot.x}" cy="${spot.y}" r="${r}"/>
+  </svg>`;
+}
 const answerText = a => Array.isArray(a) ? a.join(" · ") : a;
 const knownCount = cards => cards.filter(c => store.known(c.id)).length;
 const pct = cards => cards.length ? Math.round(100 * knownCount(cards) / cards.length) : 0;
@@ -158,7 +175,7 @@ async function getJSON(url){
 }
 
 /* ---------- Datos cargados ---------- */
-const data = { catalog: null, guides: {} };   // guides[id] = guía completa
+const data = { catalog: null, guides: {}, maps: {} };   // guides[id] = guía completa · maps[url] = mapa
 
 function prepareGuide(g){
   // ids únicos por guía para que el avance no se mezcle entre guías
@@ -173,6 +190,11 @@ async function loadGuide(id){
   const entry = data.catalog.guides.find(x => x.id === id);
   if(!entry) return null;
   const g = await getJSON(entry.file);
+  if(g.map && !data.maps[g.map]){
+    const m = await getJSON(g.map);
+    m.all = Object.values(m.paths).join("");   // todo el mundo en un solo trazo (rápido de dibujar)
+    data.maps[g.map] = m;
+  }
   prepareGuide(g);
   return g;
 }
@@ -274,11 +296,11 @@ function renderHome(){
   const examDecks = new Set(upcoming.flatMap(e => e.decks));
   h += `<div class="decks">` + s.decks.map(d => {
     const p = pct(d.cards);
-    const tag = examDecks.has(d.id) ? `<span class="tag">Entra en examen</span>` : `<span class="tag grey">No entra en el próximo examen</span>`;
+    const tag = !upcoming.length ? "" : examDecks.has(d.id) ? `<span class="tag">Entra en examen</span>` : `<span class="tag grey">No entra en el próximo examen</span>`;
     return `<article class="deck" data-deck="${d.id}">
       <div class="num">${esc(d.num)} · ${esc(d.date)}</div>
       <h3>${esc(d.title)}</h3>
-      <div>${tag}</div>
+      ${tag ? `<div>${tag}</div>` : ""}
       <div class="meta">${d.cards.length} tarjetas · ${p}% dominado</div>
       <div class="bar"><i style="width:${p}%"></i></div>
     </article>`;
@@ -339,7 +361,7 @@ function renderStudy(){
     <div class="flash ${s.flipped ? "flipped" : ""}" data-flip>
       <div class="flash-inner">
         <div class="face"><span class="lbl">Pregunta · ${esc(deckById(c.deckId).num)}</span><div class="q">${inline(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div>
-        <div class="face back"><span class="lbl">Respuesta</span><div class="a">${answerHTML(c.a)}</div></div>
+        <div class="face back ${c.map ? "has-map" : ""}"><span class="lbl">Respuesta</span><div class="a">${answerHTML(c.a)}${c.note ? `<div class="note">${inline(c.note)}</div>` : ""}</div>${mapSVG(current().guide, c.map)}</div>
       </div>
     </div>
     ${s.flipped
@@ -392,7 +414,8 @@ function renderQuiz(){
     <div class="bar" style="margin-bottom:14px"><i style="width:${Math.round(100 * s.i / s.qs.length)}%"></i></div>
     <div class="qbox">${inline(item.card.q)}</div>
     <div class="opts">${opts}</div>
-    ${item.picked !== null ? `<button class="btn primary" style="width:100%" data-next>${s.i + 1 < s.qs.length ? "Siguiente →" : "Ver resultado"}</button>` : ""}`;
+    ${item.picked !== null ? mapSVG(current().guide, item.card.map) : ""}
+    ${item.picked !== null ? `<button class="btn primary" style="width:100%;margin-top:14px" data-next>${s.i + 1 < s.qs.length ? "Siguiente →" : "Ver resultado"}</button>` : ""}`;
 }
 
 function renderQuizDone(){

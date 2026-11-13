@@ -1,6 +1,7 @@
 /* Mi Estudio — network first: with internet it always loads the newest version
    from GitHub; without internet it uses the last saved copy. */
 const CACHE = "mi-estudio";
+/* geo/world.json and guides are saved automatically on first download. */
 const FILES = ["./", "index.html", "descargar.html", "catalog.json", "manifest.webmanifest", "icon-192.png", "icon-512.png"];
 /* Guide files (guides/*.json) are saved automatically the first time they are downloaded. */
 

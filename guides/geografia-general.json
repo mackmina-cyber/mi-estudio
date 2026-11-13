@@ -1,0 +1,3212 @@
+{
+ "id": "geografia-general",
+ "title": "Geografía general",
+ "grade": "General",
+ "description": "Capitales de todos los países del mundo, con mapa.",
+ "updated": "2026-11-13",
+ "map": "geo/world.json",
+ "subjects": [
+  {
+   "id": "capitales",
+   "name": "Capitales del mundo",
+   "decks": [
+    {
+     "id": "af",
+     "num": "África",
+     "date": "54 países",
+     "title": "Capitales de África",
+     "cards": [
+      {
+       "q": "¿Cuál es la capital de Angola?",
+       "a": "Luanda",
+       "map": {
+        "id": "024",
+        "x": 536.8,
+        "y": 274.5,
+        "box": [
+         504.5,
+         252.9,
+         90.5,
+         56.6
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Argelia?",
+       "a": "Argel",
+       "map": {
+        "id": "012",
+        "x": 508.6,
+        "y": 148,
+        "box": [
+         444.2,
+         134.4,
+         120.7,
+         75.4
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Benín?",
+       "a": "Porto Novo",
+       "map": {
+        "id": "204",
+        "x": 507.2,
+        "y": 232,
+        "box": [
+         471.2,
+         202.2,
+         70.4,
+         44
+        ]
+       },
+       "note": "Porto Novo es la capital oficial; el gobierno está en Cotonú."
+      },
+      {
+       "q": "¿Cuál es la capital de Botsuana?",
+       "a": "Gaborone",
+       "map": {
+        "id": "072",
+        "x": 572,
+        "y": 318.5,
+        "box": [
+         533.3,
+         290,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Burkina Faso?",
+       "a": "Uagadugú",
+       "map": {
+        "id": "854",
+        "x": 495.7,
+        "y": 215.7,
+        "box": [
+         460.4,
+         194,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Burundi?",
+       "a": "Gitega",
+       "map": {
+        "id": "108",
+        "x": 583.1,
+        "y": 259.5,
+        "box": [
+         547.9,
+         237.4,
+         70.4,
+         44
+        ]
+       },
+       "note": "Gitega reemplazó a Buyumbura como capital política en 2019."
+      },
+      {
+       "q": "¿Cuál es la capital de Cabo Verde?",
+       "a": "Praia",
+       "map": {
+        "id": "132",
+        "x": 434.7,
+        "y": 208.5,
+        "box": [
+         398.1,
+         183.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Camerún?",
+       "a": "Yaundé",
+       "map": {
+        "id": "120",
+        "x": 532,
+        "y": 239.3,
+        "box": [
+         496.4,
+         205.8,
+         76,
+         47.5
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Chad?",
+       "a": "Yamena",
+       "map": {
+        "id": "148",
+        "x": 541.8,
+        "y": 216.4,
+        "box": [
+         498.8,
+         173.8,
+         106.5,
+         66.5
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Comoras?",
+       "a": "Moroni",
+       "map": {
+        "id": "174",
+        "x": 620.2,
+        "y": 282.5,
+        "box": [
+         586.7,
+         261,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Costa de Marfil?",
+       "a": "Yamusukro",
+       "map": {
+        "id": "384",
+        "x": 485.3,
+        "y": 231.1,
+        "box": [
+         449.4,
+         207.1,
+         70.4,
+         44
+        ]
+       },
+       "note": "Yamusukro es la capital oficial; Abiyán es la ciudad más grande."
+      },
+      {
+       "q": "¿Cuál es la capital de Egipto?",
+       "a": "El Cairo",
+       "map": {
+        "id": "818",
+        "x": 586.8,
+        "y": 166.5,
+        "box": [
+         550.3,
+         153.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Eritrea?",
+       "a": "Asmara",
+       "map": {
+        "id": "232",
+        "x": 608.1,
+        "y": 207.4,
+        "box": [
+         575.3,
+         185.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Esuatini?",
+       "a": "Mbabane (y Lobamba)",
+       "map": {
+        "id": "748",
+        "x": 586.5,
+        "y": 323.1,
+        "box": [
+         552.2,
+         301.7,
+         70.4,
+         44
+        ]
+       },
+       "note": "Mbabane es la capital administrativa y Lobamba la real y legislativa."
+      },
+      {
+       "q": "¿Cuál es la capital de Etiopía?",
+       "a": "Adís Abeba",
+       "map": {
+        "id": "231",
+        "x": 607.6,
+        "y": 224.9,
+        "box": [
+         574.5,
+         200.8,
+         76,
+         47.5
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Gabón?",
+       "a": "Libreville",
+       "map": {
+        "id": "266",
+        "x": 526.3,
+        "y": 248.9,
+        "box": [
+         497,
+         230.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Gambia?",
+       "a": "Banjul",
+       "map": {
+        "id": "270",
+        "x": 453.9,
+        "y": 212.6,
+        "box": [
+         422.2,
+         190.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Ghana?",
+       "a": "Acra",
+       "map": {
+        "id": "288",
+        "x": 499.5,
+        "y": 234.6,
+        "box": [
+         462,
+         205.9,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Guinea?",
+       "a": "Conakri",
+       "map": {
+        "id": "324",
+        "x": 462,
+        "y": 223.5,
+        "box": [
+         433.2,
+         200.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Guinea Ecuatorial?",
+       "a": "Malabo",
+       "map": {
+        "id": "226",
+        "x": 524.4,
+        "y": 239.6,
+        "box": [
+         492.3,
+         221.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Guinea-Bisáu?",
+       "a": "Bisáu",
+       "map": {
+        "id": "624",
+        "x": 456.7,
+        "y": 217,
+        "box": [
+         422.6,
+         195.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Kenia?",
+       "a": "Nairobi",
+       "map": {
+        "id": "404",
+        "x": 602.3,
+        "y": 253.6,
+        "box": [
+         570.1,
+         226.9,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Lesotho?",
+       "a": "Maseru",
+       "map": {
+        "id": "426",
+        "x": 576.3,
+        "y": 331.4,
+        "box": [
+         543.2,
+         310.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Liberia?",
+       "a": "Monrovia",
+       "map": {
+        "id": "430",
+        "x": 470,
+        "y": 232.5,
+        "box": [
+         438.5,
+         210.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Libia?",
+       "a": "Trípoli",
+       "map": {
+        "id": "434",
+        "x": 536.6,
+        "y": 158.6,
+        "box": [
+         502.2,
+         148.3,
+         91.2,
+         57
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Madagascar?",
+       "a": "Antananarivo",
+       "map": {
+        "id": "450",
+        "x": 632,
+        "y": 302.5,
+        "box": [
+         585.3,
+         274.2,
+         89.9,
+         56.2
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Malawi?",
+       "a": "Lilongüe",
+       "map": {
+        "id": "454",
+        "x": 593.9,
+        "y": 288.8,
+        "box": [
+         560,
+         264.9,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Mali?",
+       "a": "Bamako",
+       "map": {
+        "id": "466",
+        "x": 477.8,
+        "y": 215,
+        "box": [
+         439.4,
+         170.3,
+         98.9,
+         61.8
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Marruecos?",
+       "a": "Rabat",
+       "map": {
+        "id": "504",
+        "x": 481,
+        "y": 155.5,
+        "box": [
+         426.5,
+         140.1,
+         96.7,
+         60.5
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Mauricio?",
+       "a": "Port Louis",
+       "map": {
+        "id": "480",
+        "x": 659.7,
+        "y": 306,
+        "box": [
+         624.7,
+         284.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Mauritania?",
+       "a": "Nuakchot",
+       "map": {
+        "id": "478",
+        "x": 455.6,
+        "y": 199.8,
+        "box": [
+         427.8,
+         165.5,
+         83.6,
+         52.3
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Mozambique?",
+       "a": "Maputo",
+       "map": {
+        "id": "508",
+        "x": 590.5,
+        "y": 322.1,
+        "box": [
+         544,
+         267.7,
+         109.3,
+         68.3
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Namibia?",
+       "a": "Windhoek",
+       "map": {
+        "id": "516",
+        "x": 547.5,
+        "y": 312.7,
+        "box": [
+         511.5,
+         288.8,
+         79.7,
+         49.8
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Níger?",
+       "a": "Niamey",
+       "map": {
+        "id": "562",
+        "x": 505.9,
+        "y": 212.5,
+        "box": [
+         483,
+         176.5,
+         78.8,
+         49.3
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Nigeria?",
+       "a": "Abuya",
+       "map": {
+        "id": "566",
+        "x": 520.8,
+        "y": 224.8,
+        "box": [
+         488.9,
+         202.8,
+         70.4,
+         44
+        ]
+       },
+       "note": "Abuya reemplazó a Lagos como capital en 1991."
+      },
+      {
+       "q": "¿Cuál es la capital de República Centroafricana?",
+       "a": "Bangui",
+       "map": {
+        "id": "140",
+        "x": 551.5,
+        "y": 237.9,
+        "box": [
+         522.9,
+         209.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de República del Congo?",
+       "a": "Brazzaville",
+       "map": {
+        "id": "178",
+        "x": 542.5,
+        "y": 261.9,
+        "box": [
+         506.1,
+         229.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de República Democrática del Congo?",
+       "a": "Kinsasa",
+       "map": {
+        "id": "180",
+        "x": 542.5,
+        "y": 262,
+        "box": [
+         497.9,
+         222.2,
+         124.9,
+         78
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Ruanda?",
+       "a": "Kigali",
+       "map": {
+        "id": "646",
+        "x": 583.5,
+        "y": 255.4,
+        "box": [
+         547.8,
+         233.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Santo Tomé y Príncipe?",
+       "a": "Santo Tomé",
+       "map": {
+        "id": "678",
+        "x": 518.7,
+        "y": 249.1,
+        "box": [
+         484.1,
+         225.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Senegal?",
+       "a": "Dakar",
+       "map": {
+        "id": "686",
+        "x": 451.5,
+        "y": 209.2,
+        "box": [
+         424.6,
+         187.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Seychelles?",
+       "a": "Victoria",
+       "map": {
+        "id": "690",
+        "x": 654,
+        "y": 262.8,
+        "box": [
+         619.1,
+         241,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Sierra Leona?",
+       "a": "Freetown",
+       "map": {
+        "id": "694",
+        "x": 463.2,
+        "y": 226.4,
+        "box": [
+         432.1,
+         204.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Somalia?",
+       "a": "Mogadiscio",
+       "map": {
+        "id": "706",
+        "x": 626,
+        "y": 244.3,
+        "box": [
+         582.7,
+         207.2,
+         91.2,
+         57
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Sudáfrica?",
+       "a": "Pretoria (también Ciudad del Cabo y Bloemfontein)",
+       "map": {
+        "id": "710",
+        "x": 578.3,
+        "y": 321.5,
+        "box": [
+         526.4,
+         302.7,
+         84.3,
+         52.7
+        ]
+       },
+       "note": "Sudáfrica tiene tres capitales: Pretoria (gobierno), Ciudad del Cabo (congreso) y Bloemfontein (tribunales)."
+      },
+      {
+       "q": "¿Cuál es la capital de Sudán?",
+       "a": "Jartum",
+       "map": {
+        "id": "729",
+        "x": 590.4,
+        "y": 206.8,
+        "box": [
+         538.9,
+         179,
+         90.2,
+         56.3
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Sudán del Sur?",
+       "a": "Yuba",
+       "map": {
+        "id": "728",
+        "x": 587.7,
+        "y": 236.5,
+        "box": [
+         547.3,
+         206.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Tanzania?",
+       "a": "Dodoma",
+       "map": {
+        "id": "834",
+        "x": 599.3,
+        "y": 267.1,
+        "box": [
+         561.2,
+         245.3,
+         71.4,
+         44.6
+        ]
+       },
+       "note": "Dodoma es la capital oficial; Dar es-Salam es la ciudad más grande."
+      },
+      {
+       "q": "¿Cuál es la capital de Togo?",
+       "a": "Lomé",
+       "map": {
+        "id": "768",
+        "x": 503.4,
+        "y": 233,
+        "box": [
+         467.1,
+         204.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Túnez?",
+       "a": "Túnez",
+       "map": {
+        "id": "788",
+        "x": 528.2,
+        "y": 147.7,
+        "box": [
+         491.2,
+         134.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Uganda?",
+       "a": "Kampala",
+       "map": {
+        "id": "800",
+        "x": 590.5,
+        "y": 249.1,
+        "box": [
+         554.4,
+         224.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Yibuti?",
+       "a": "Yibuti",
+       "map": {
+        "id": "262",
+        "x": 619.8,
+        "y": 217.8,
+        "box": [
+         583.1,
+         195.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Zambia?",
+       "a": "Lusaka",
+       "map": {
+        "id": "894",
+        "x": 578.6,
+        "y": 292.8,
+        "box": [
+         542.1,
+         264.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Zimbabue?",
+       "a": "Harare",
+       "map": {
+        "id": "716",
+        "x": 586.3,
+        "y": 299.5,
+        "box": [
+         545.7,
+         280.8,
+         70.4,
+         44
+        ]
+       }
+      }
+     ],
+     "notes": [
+      "## Capitales de África",
+      "54 países.",
+      "- **Angola** — Luanda",
+      "- **Argelia** — Argel",
+      "- **Benín** — Porto Novo",
+      "- **Botsuana** — Gaborone",
+      "- **Burkina Faso** — Uagadugú",
+      "- **Burundi** — Gitega",
+      "- **Cabo Verde** — Praia",
+      "- **Camerún** — Yaundé",
+      "- **Chad** — Yamena",
+      "- **Comoras** — Moroni",
+      "- **Costa de Marfil** — Yamusukro",
+      "- **Egipto** — El Cairo",
+      "- **Eritrea** — Asmara",
+      "- **Esuatini** — Mbabane (y Lobamba)",
+      "- **Etiopía** — Adís Abeba",
+      "- **Gabón** — Libreville",
+      "- **Gambia** — Banjul",
+      "- **Ghana** — Acra",
+      "- **Guinea** — Conakri",
+      "- **Guinea Ecuatorial** — Malabo",
+      "- **Guinea-Bisáu** — Bisáu",
+      "- **Kenia** — Nairobi",
+      "- **Lesotho** — Maseru",
+      "- **Liberia** — Monrovia",
+      "- **Libia** — Trípoli",
+      "- **Madagascar** — Antananarivo",
+      "- **Malawi** — Lilongüe",
+      "- **Mali** — Bamako",
+      "- **Marruecos** — Rabat",
+      "- **Mauricio** — Port Louis",
+      "- **Mauritania** — Nuakchot",
+      "- **Mozambique** — Maputo",
+      "- **Namibia** — Windhoek",
+      "- **Níger** — Niamey",
+      "- **Nigeria** — Abuya",
+      "- **República Centroafricana** — Bangui",
+      "- **República del Congo** — Brazzaville",
+      "- **República Democrática del Congo** — Kinsasa",
+      "- **Ruanda** — Kigali",
+      "- **Santo Tomé y Príncipe** — Santo Tomé",
+      "- **Senegal** — Dakar",
+      "- **Seychelles** — Victoria",
+      "- **Sierra Leona** — Freetown",
+      "- **Somalia** — Mogadiscio",
+      "- **Sudáfrica** — Pretoria (también Ciudad del Cabo y Bloemfontein)",
+      "- **Sudán** — Jartum",
+      "- **Sudán del Sur** — Yuba",
+      "- **Tanzania** — Dodoma",
+      "- **Togo** — Lomé",
+      "- **Túnez** — Túnez",
+      "- **Uganda** — Kampala",
+      "- **Yibuti** — Yibuti",
+      "- **Zambia** — Lusaka",
+      "- **Zimbabue** — Harare"
+     ]
+    },
+    {
+     "id": "am",
+     "num": "América",
+     "date": "35 países",
+     "title": "Capitales de América",
+     "cards": [
+      {
+       "q": "¿Cuál es la capital de Antigua y Barbuda?",
+       "a": "Saint John's",
+       "map": {
+        "id": "028",
+        "x": 328.2,
+        "y": 202.4,
+        "box": [
+         293.2,
+         180,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Argentina?",
+       "a": "Buenos Aires",
+       "map": {
+        "id": "032",
+        "x": 337.8,
+        "y": 346.1,
+        "box": [
+         212.5,
+         287.5,
+         221.5,
+         138.5
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bahamas?",
+       "a": "Nasáu",
+       "map": {
+        "id": "044",
+        "x": 285.2,
+        "y": 180.4,
+        "box": [
+         254.1,
+         161.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Barbados?",
+       "a": "Bridgetown",
+       "map": {
+        "id": "052",
+        "x": 334.4,
+        "y": 213.6,
+        "box": [
+         299.4,
+         191.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Belice?",
+       "a": "Belmopán",
+       "map": {
+        "id": "084",
+        "x": 253.4,
+        "y": 202.1,
+        "box": [
+         218.8,
+         180.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bolivia?",
+       "a": "Sucre (y La Paz, sede de gobierno)",
+       "map": {
+        "id": "068",
+        "x": 318.7,
+        "y": 302.9,
+        "box": [
+         279.4,
+         267.8,
+         87.9,
+         54.9
+        ]
+       },
+       "note": "Bolivia tiene dos: Sucre es la capital constitucional y La Paz la sede de gobierno."
+      },
+      {
+       "q": "¿Cuál es la capital de Brasil?",
+       "a": "Brasilia",
+       "map": {
+        "id": "076",
+        "x": 366.9,
+        "y": 293.8,
+        "box": [
+         218.9,
+         208.4,
+         259.9,
+         162.4
+        ]
+       },
+       "note": "Brasilia fue construida para ser la capital y se inauguró en 1960."
+      },
+      {
+       "q": "¿Cuál es la capital de Canadá?",
+       "a": "Ottawa",
+       "map": {
+        "id": "124",
+        "x": 289.7,
+        "y": 123.9,
+        "box": [
+         47,
+         -25.5,
+         368.1,
+         230.1
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Chile?",
+       "a": "Santiago de Chile",
+       "map": {
+        "id": "152",
+        "x": 303.8,
+        "y": 342.9,
+        "box": [
+         170.4,
+         272.1,
+         254.3,
+         158.9
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Colombia?",
+       "a": "Bogotá",
+       "map": {
+        "id": "170",
+        "x": 294.2,
+        "y": 237.2,
+        "box": [
+         241.8,
+         203.9,
+         111.1,
+         69.4
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Costa Rica?",
+       "a": "San José",
+       "map": {
+        "id": "188",
+        "x": 266.4,
+        "y": 222.4,
+        "box": [
+         230.8,
+         201.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Cuba?",
+       "a": "La Habana",
+       "map": {
+        "id": "192",
+        "x": 271.2,
+        "y": 185.7,
+        "box": [
+         243.9,
+         168.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Dominica?",
+       "a": "Roseau",
+       "map": {
+        "id": "212",
+        "x": 329.5,
+        "y": 207.5,
+        "box": [
+         294.3,
+         185.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Ecuador?",
+       "a": "Quito",
+       "map": {
+        "id": "218",
+        "x": 281.9,
+        "y": 250.6,
+        "box": [
+         233,
+         232.9,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de El Salvador?",
+       "a": "San Salvador",
+       "map": {
+        "id": "222",
+        "x": 252.3,
+        "y": 212,
+        "box": [
+         217.8,
+         189.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Estados Unidos?",
+       "a": "Washington D. C.",
+       "map": {
+        "id": "840",
+        "x": 286,
+        "y": 142,
+        "box": [
+         113.5,
+         71.6,
+         240.5,
+         150.3
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Granada?",
+       "a": "Saint George's",
+       "map": {
+        "id": "308",
+        "x": 328.5,
+        "y": 216.5,
+        "box": [
+         293.5,
+         194.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Guatemala?",
+       "a": "Ciudad de Guatemala",
+       "map": {
+        "id": "320",
+        "x": 248.6,
+        "y": 209.3,
+        "box": [
+         214.2,
+         184.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Guyana?",
+       "a": "Georgetown",
+       "map": {
+        "id": "328",
+        "x": 338.5,
+        "y": 231.1,
+        "box": [
+         301.1,
+         214.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Haití?",
+       "a": "Puerto Príncipe",
+       "map": {
+        "id": "332",
+        "x": 299.1,
+        "y": 198.5,
+        "box": [
+         261.8,
+         175.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Honduras?",
+       "a": "Tegucigalpa",
+       "map": {
+        "id": "340",
+        "x": 257.8,
+        "y": 210.9,
+        "box": [
+         225.2,
+         187.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Jamaica?",
+       "a": "Kingston",
+       "map": {
+        "id": "388",
+        "x": 286.7,
+        "y": 200,
+        "box": [
+         250.2,
+         177.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de México?",
+       "a": "Ciudad de México",
+       "map": {
+        "id": "484",
+        "x": 224.6,
+        "y": 196,
+        "box": [
+         149.1,
+         143.1,
+         132,
+         82.5
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Nicaragua?",
+       "a": "Managua",
+       "map": {
+        "id": "558",
+        "x": 260.4,
+        "y": 216.3,
+        "box": [
+         227.5,
+         192.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Panamá?",
+       "a": "Ciudad de Panamá",
+       "map": {
+        "id": "591",
+        "x": 279.1,
+        "y": 225,
+        "box": [
+         242.3,
+         204.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Paraguay?",
+       "a": "Asunción",
+       "map": {
+        "id": "600",
+        "x": 339.9,
+        "y": 320.2,
+        "box": [
+         302.4,
+         293,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Perú?",
+       "a": "Lima",
+       "map": {
+        "id": "604",
+        "x": 286,
+        "y": 283.5,
+        "box": [
+         230.6,
+         237.4,
+         122,
+         76.2
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de República Dominicana?",
+       "a": "Santo Domingo",
+       "map": {
+        "id": "214",
+        "x": 305.9,
+        "y": 198.7,
+        "box": [
+         269.9,
+         175.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de San Cristóbal y Nieves?",
+       "a": "Basseterre",
+       "map": {
+        "id": "659",
+        "x": 325.8,
+        "y": 202,
+        "box": [
+         290.7,
+         180.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de San Vicente y Granadinas?",
+       "a": "Kingstown",
+       "map": {
+        "id": "670",
+        "x": 329.9,
+        "y": 213.5,
+        "box": [
+         294.7,
+         191.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Santa Lucía?",
+       "a": "Castries",
+       "map": {
+        "id": "662",
+        "x": 330.5,
+        "y": 211.1,
+        "box": [
+         295.4,
+         189.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Surinam?",
+       "a": "Paramaribo",
+       "map": {
+        "id": "740",
+        "x": 346.8,
+        "y": 233.7,
+        "box": [
+         309.2,
+         217.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Trinidad y Tobago?",
+       "a": "Puerto España",
+       "map": {
+        "id": "780",
+        "x": 329.1,
+        "y": 220.4,
+        "box": [
+         294.7,
+         198.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Uruguay?",
+       "a": "Montevideo",
+       "map": {
+        "id": "858",
+        "x": 343.9,
+        "y": 347,
+        "box": [
+         309.9,
+         318.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Venezuela?",
+       "a": "Caracas",
+       "map": {
+        "id": "862",
+        "x": 314.2,
+        "y": 220.9,
+        "box": [
+         276.7,
+         208.2,
+         76.6,
+         47.9
+        ]
+       }
+      }
+     ],
+     "notes": [
+      "## Capitales de América",
+      "35 países.",
+      "- **Antigua y Barbuda** — Saint John's",
+      "- **Argentina** — Buenos Aires",
+      "- **Bahamas** — Nasáu",
+      "- **Barbados** — Bridgetown",
+      "- **Belice** — Belmopán",
+      "- **Bolivia** — Sucre (y La Paz, sede de gobierno)",
+      "- **Brasil** — Brasilia",
+      "- **Canadá** — Ottawa",
+      "- **Chile** — Santiago de Chile",
+      "- **Colombia** — Bogotá",
+      "- **Costa Rica** — San José",
+      "- **Cuba** — La Habana",
+      "- **Dominica** — Roseau",
+      "- **Ecuador** — Quito",
+      "- **El Salvador** — San Salvador",
+      "- **Estados Unidos** — Washington D. C.",
+      "- **Granada** — Saint George's",
+      "- **Guatemala** — Ciudad de Guatemala",
+      "- **Guyana** — Georgetown",
+      "- **Haití** — Puerto Príncipe",
+      "- **Honduras** — Tegucigalpa",
+      "- **Jamaica** — Kingston",
+      "- **México** — Ciudad de México",
+      "- **Nicaragua** — Managua",
+      "- **Panamá** — Ciudad de Panamá",
+      "- **Paraguay** — Asunción",
+      "- **Perú** — Lima",
+      "- **República Dominicana** — Santo Domingo",
+      "- **San Cristóbal y Nieves** — Basseterre",
+      "- **San Vicente y Granadinas** — Kingstown",
+      "- **Santa Lucía** — Castries",
+      "- **Surinam** — Paramaribo",
+      "- **Trinidad y Tobago** — Puerto España",
+      "- **Uruguay** — Montevideo",
+      "- **Venezuela** — Caracas"
+     ]
+    },
+    {
+     "id": "as",
+     "num": "Asia",
+     "date": "47 países",
+     "title": "Capitales de Asia",
+     "cards": [
+      {
+       "q": "¿Cuál es la capital de Afganistán?",
+       "a": "Kabul",
+       "map": {
+        "id": "004",
+        "x": 692.1,
+        "y": 154.1,
+        "box": [
+         652.8,
+         133.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Arabia Saudí?",
+       "a": "Riad",
+       "map": {
+        "id": "682",
+        "x": 629.8,
+        "y": 181.4,
+        "box": [
+         572.8,
+         149.8,
+         105,
+         65.6
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Armenia?",
+       "a": "Ereván",
+       "map": {
+        "id": "051",
+        "x": 623.6,
+        "y": 138.4,
+        "box": [
+         589.8,
+         116.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Azerbaiyán?",
+       "a": "Bakú",
+       "map": {
+        "id": "031",
+        "x": 638.6,
+        "y": 137.8,
+        "box": [
+         596.9,
+         116.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bangladesh?",
+       "a": "Daca",
+       "map": {
+        "id": "050",
+        "x": 751.1,
+        "y": 184.1,
+        "box": [
+         715.7,
+         162.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Baréin?",
+       "a": "Manama",
+       "map": {
+        "id": "048",
+        "x": 640.5,
+        "y": 177.1,
+        "box": [
+         605.2,
+         155.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Brunei?",
+       "a": "Bandar Seri Begawan",
+       "map": {
+        "id": "096",
+        "x": 819.3,
+        "y": 236.4,
+        "box": [
+         783.4,
+         215.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bután?",
+       "a": "Timbu",
+       "map": {
+        "id": "064",
+        "x": 749,
+        "y": 173.7,
+        "box": [
+         715.9,
+         151.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Camboya?",
+       "a": "Nom Pen",
+       "map": {
+        "id": "116",
+        "x": 791.4,
+        "y": 217.9,
+        "box": [
+         756.4,
+         193.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Catar?",
+       "a": "Doha",
+       "map": {
+        "id": "634",
+        "x": 643.1,
+        "y": 179.8,
+        "box": [
+         607,
+         157.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de China?",
+       "a": "Pekín",
+       "map": {
+        "id": "156",
+        "x": 823.3,
+        "y": 139.1,
+        "box": [
+         662,
+         70.7,
+         254.8,
+         159.2
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Corea del Norte?",
+       "a": "Pionyang",
+       "map": {
+        "id": "408",
+        "x": 849.3,
+        "y": 141.6,
+        "box": [
+         819,
+         115.9,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Corea del Sur?",
+       "a": "Seúl",
+       "map": {
+        "id": "410",
+        "x": 852.7,
+        "y": 145.7,
+        "box": [
+         821.6,
+         128.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Emiratos Árabes Unidos?",
+       "a": "Abu Dabi",
+       "map": {
+        "id": "784",
+        "x": 651.1,
+        "y": 182.1,
+        "box": [
+         614.7,
+         160.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Filipinas?",
+       "a": "Manila",
+       "map": {
+        "id": "608",
+        "x": 836.1,
+        "y": 209.4,
+        "box": [
+         785.9,
+         181.4,
+         104.7,
+         65.4
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Georgia?",
+       "a": "Tiflis",
+       "map": {
+        "id": "268",
+        "x": 624.5,
+        "y": 134.2,
+        "box": [
+         585.1,
+         110.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de India?",
+       "a": "Nueva Delhi",
+       "map": {
+        "id": "356",
+        "x": 714.5,
+        "y": 170.5,
+        "box": [
+         638.5,
+         132.4,
+         182.8,
+         114.2
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Indonesia?",
+       "a": "Yakarta",
+       "map": {
+        "id": "360",
+        "x": 796.8,
+        "y": 267.3,
+        "box": [
+         739.7,
+         210.7,
+         148.5,
+         92.8
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Irak?",
+       "a": "Bagdad",
+       "map": {
+        "id": "368",
+        "x": 623.3,
+        "y": 157.4,
+        "box": [
+         586.1,
+         135.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Irán?",
+       "a": "Teherán",
+       "map": {
+        "id": "364",
+        "x": 642.8,
+        "y": 150.8,
+        "box": [
+         600.2,
+         129.3,
+         97.8,
+         61.1
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Israel?",
+       "a": "Jerusalén",
+       "map": {
+        "id": "376",
+        "x": 597.8,
+        "y": 161.8,
+        "box": [
+         562.2,
+         140.6,
+         70.4,
+         44
+        ]
+       },
+       "note": "Israel declara Jerusalén como su capital; muchos países tienen su embajada en Tel Aviv."
+      },
+      {
+       "q": "¿Cuál es la capital de Japón?",
+       "a": "Tokio",
+       "map": {
+        "id": "392",
+        "x": 888,
+        "y": 150.9,
+        "box": [
+         803.6,
+         108.8,
+         141.5,
+         88.5
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Jordania?",
+       "a": "Amán",
+       "map": {
+        "id": "400",
+        "x": 599.8,
+        "y": 161.2,
+        "box": [
+         567.9,
+         141.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Kazajistán?",
+       "a": "Astaná",
+       "map": {
+        "id": "398",
+        "x": 698.5,
+        "y": 107.8,
+        "box": [
+         601.2,
+         63.7,
+         169.7,
+         106
+        ]
+       },
+       "note": "Astaná se llamó Nursultán entre 2019 y 2022."
+      },
+      {
+       "q": "¿Cuál es la capital de Kirguizistán?",
+       "a": "Biskek",
+       "map": {
+        "id": "417",
+        "x": 707.2,
+        "y": 130.9,
+        "box": [
+         672.4,
+         113.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Kuwait?",
+       "a": "Kuwait",
+       "map": {
+        "id": "414",
+        "x": 633.3,
+        "y": 168.4,
+        "box": [
+         596.7,
+         146.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Laos?",
+       "a": "Vientián",
+       "map": {
+        "id": "418",
+        "x": 785,
+        "y": 200.1,
+        "box": [
+         753.4,
+         177.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Líbano?",
+       "a": "Beirut",
+       "map": {
+        "id": "422",
+        "x": 598.6,
+        "y": 155.9,
+        "box": [
+         564.4,
+         134,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Malasia?",
+       "a": "Kuala Lumpur",
+       "map": {
+        "id": "458",
+        "x": 782.5,
+        "y": 241.3,
+        "box": [
+         763.2,
+         213.1,
+         81.7,
+         51
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Maldivas?",
+       "a": "Malé",
+       "map": {
+        "id": "462",
+        "x": 704.2,
+        "y": 238.4,
+        "box": [
+         668.9,
+         217.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Mongolia?",
+       "a": "Ulán Bator",
+       "map": {
+        "id": "496",
+        "x": 796.9,
+        "y": 116.9,
+        "box": [
+         721.4,
+         78,
+         134,
+         83.7
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Myanmar?",
+       "a": "Naipyidó",
+       "map": {
+        "id": "104",
+        "x": 767,
+        "y": 195.2,
+        "box": [
+         706.6,
+         157.9,
+         123.8,
+         77.4
+        ]
+       },
+       "note": "Naipyidó reemplazó a Rangún como capital en 2006."
+      },
+      {
+       "q": "¿Cuál es la capital de Nepal?",
+       "a": "Katmandú",
+       "map": {
+        "id": "524",
+        "x": 737,
+        "y": 173.1,
+        "box": [
+         698.5,
+         149.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Omán?",
+       "a": "Mascate",
+       "map": {
+        "id": "512",
+        "x": 662.2,
+        "y": 184.5,
+        "box": [
+         620.1,
+         168.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Pakistán?",
+       "a": "Islamabad",
+       "map": {
+        "id": "586",
+        "x": 702.9,
+        "y": 156.3,
+        "box": [
+         647.2,
+         137.9,
+         88.6,
+         55.3
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Palestina?",
+       "a": "Ramala (sede de gobierno); proclama Jerusalén Este",
+       "map": {
+        "id": "275",
+        "x": 597.8,
+        "y": 161.4,
+        "box": [
+         561.7,
+         139.5,
+         70.4,
+         44
+        ]
+       },
+       "note": "Palestina proclama Jerusalén Este como capital; su gobierno funciona en Ramala."
+      },
+      {
+       "q": "¿Cuál es la capital de Singapur?",
+       "a": "Singapur",
+       "map": {
+        "id": "702",
+        "x": 788.5,
+        "y": 246.4,
+        "box": [
+         753.2,
+         224.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Siria?",
+       "a": "Damasco",
+       "map": {
+        "id": "760",
+        "x": 600.8,
+        "y": 156.9,
+        "box": [
+         573.3,
+         131.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Sri Lanka?",
+       "a": "Sri Jayawardenepura Kotte",
+       "map": {
+        "id": "144",
+        "x": 721.8,
+        "y": 230.7,
+        "box": [
+         689.2,
+         206.1,
+         70.4,
+         44
+        ]
+       },
+       "note": "Sri Jayawardenepura Kotte es la capital oficial; Colombo es la ciudad más grande."
+      },
+      {
+       "q": "¿Cuál es la capital de Tailandia?",
+       "a": "Bangkok",
+       "map": {
+        "id": "764",
+        "x": 779.2,
+        "y": 211.8,
+        "box": [
+         732.7,
+         183,
+         98.6,
+         61.6
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Tayikistán?",
+       "a": "Dusambé",
+       "map": {
+        "id": "762",
+        "x": 691.1,
+        "y": 143,
+        "box": [
+         662.7,
+         120.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Timor Oriental?",
+       "a": "Dili",
+       "map": {
+        "id": "626",
+        "x": 848.8,
+        "y": 273.8,
+        "box": [
+         813.9,
+         252.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Turkmenistán?",
+       "a": "Asjabad",
+       "map": {
+        "id": "795",
+        "x": 662.2,
+        "y": 144.6,
+        "box": [
+         630.2,
+         119.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Turquía?",
+       "a": "Ankara",
+       "map": {
+        "id": "792",
+        "x": 591.3,
+        "y": 139.1,
+        "box": [
+         558.2,
+         116.9,
+         79.5,
+         49.7
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Uzbekistán?",
+       "a": "Taskent",
+       "map": {
+        "id": "860",
+        "x": 692.3,
+        "y": 135.4,
+        "box": [
+         643.6,
+         112.8,
+         71.4,
+         44.6
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Vietnam?",
+       "a": "Hanói",
+       "map": {
+        "id": "704",
+        "x": 794,
+        "y": 191.6,
+        "box": [
+         744.7,
+         174.9,
+         98.3,
+         61.4
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Yemen?",
+       "a": "Saná",
+       "map": {
+        "id": "887",
+        "x": 622.8,
+        "y": 207.3,
+        "box": [
+         599.7,
+         184.5,
+         70.4,
+         44
+        ]
+       }
+      }
+     ],
+     "notes": [
+      "## Capitales de Asia",
+      "47 países.",
+      "- **Afganistán** — Kabul",
+      "- **Arabia Saudí** — Riad",
+      "- **Armenia** — Ereván",
+      "- **Azerbaiyán** — Bakú",
+      "- **Bangladesh** — Daca",
+      "- **Baréin** — Manama",
+      "- **Brunei** — Bandar Seri Begawan",
+      "- **Bután** — Timbu",
+      "- **Camboya** — Nom Pen",
+      "- **Catar** — Doha",
+      "- **China** — Pekín",
+      "- **Corea del Norte** — Pionyang",
+      "- **Corea del Sur** — Seúl",
+      "- **Emiratos Árabes Unidos** — Abu Dabi",
+      "- **Filipinas** — Manila",
+      "- **Georgia** — Tiflis",
+      "- **India** — Nueva Delhi",
+      "- **Indonesia** — Yakarta",
+      "- **Irak** — Bagdad",
+      "- **Irán** — Teherán",
+      "- **Israel** — Jerusalén",
+      "- **Japón** — Tokio",
+      "- **Jordania** — Amán",
+      "- **Kazajistán** — Astaná",
+      "- **Kirguizistán** — Biskek",
+      "- **Kuwait** — Kuwait",
+      "- **Laos** — Vientián",
+      "- **Líbano** — Beirut",
+      "- **Malasia** — Kuala Lumpur",
+      "- **Maldivas** — Malé",
+      "- **Mongolia** — Ulán Bator",
+      "- **Myanmar** — Naipyidó",
+      "- **Nepal** — Katmandú",
+      "- **Omán** — Mascate",
+      "- **Pakistán** — Islamabad",
+      "- **Palestina** — Ramala (sede de gobierno); proclama Jerusalén Este",
+      "- **Singapur** — Singapur",
+      "- **Siria** — Damasco",
+      "- **Sri Lanka** — Sri Jayawardenepura Kotte",
+      "- **Tailandia** — Bangkok",
+      "- **Tayikistán** — Dusambé",
+      "- **Timor Oriental** — Dili",
+      "- **Turkmenistán** — Asjabad",
+      "- **Turquía** — Ankara",
+      "- **Uzbekistán** — Taskent",
+      "- **Vietnam** — Hanói",
+      "- **Yemen** — Saná"
+     ]
+    },
+    {
+     "id": "eu",
+     "num": "Europa",
+     "date": "45 países",
+     "title": "Capitales de Europa",
+     "cards": [
+      {
+       "q": "¿Cuál es la capital de Albania?",
+       "a": "Tirana",
+       "map": {
+        "id": "008",
+        "x": 555.1,
+        "y": 135.2,
+        "box": [
+         520.8,
+         113.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Alemania?",
+       "a": "Berlín",
+       "map": {
+        "id": "276",
+        "x": 537.3,
+        "y": 104.1,
+        "box": [
+         493.8,
+         86,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Andorra?",
+       "a": "Andorra la Vieja",
+       "map": {
+        "id": "020",
+        "x": 504.2,
+        "y": 131.9,
+        "box": [
+         469.2,
+         109.9,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Austria?",
+       "a": "Viena",
+       "map": {
+        "id": "040",
+        "x": 545.5,
+        "y": 116.1,
+        "box": [
+         501.8,
+         95.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bélgica?",
+       "a": "Bruselas",
+       "map": {
+        "id": "056",
+        "x": 512.1,
+        "y": 108.7,
+        "box": [
+         477.1,
+         87.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bielorrusia?",
+       "a": "Minsk",
+       "map": {
+        "id": "112",
+        "x": 576.6,
+        "y": 100.3,
+        "box": [
+         542.4,
+         78.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bosnia y Herzegovina?",
+       "a": "Sarajevo",
+       "map": {
+        "id": "070",
+        "x": 551,
+        "y": 128.2,
+        "box": [
+         513.9,
+         106,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Bulgaria?",
+       "a": "Sofía",
+       "map": {
+        "id": "100",
+        "x": 564.8,
+        "y": 131.4,
+        "box": [
+         535.5,
+         109.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Chipre?",
+       "a": "Nicosia",
+       "map": {
+        "id": "196",
+        "x": 592.6,
+        "y": 152.3,
+        "box": [
+         557,
+         131.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Ciudad del Vaticano?",
+       "a": "Ciudad del Vaticano",
+       "map": {
+        "id": "336",
+        "x": 534.6,
+        "y": 133.6,
+        "box": [
+         499.4,
+         111.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Croacia?",
+       "a": "Zagreb",
+       "map": {
+        "id": "191",
+        "x": 544.4,
+        "y": 122.7,
+        "box": [
+         510.5,
+         104.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Dinamarca?",
+       "a": "Copenhague",
+       "map": {
+        "id": "208",
+        "x": 534.9,
+        "y": 95.3,
+        "box": [
+         497.1,
+         71.9,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Eslovaquia?",
+       "a": "Bratislava",
+       "map": {
+        "id": "703",
+        "x": 547.5,
+        "y": 116.3,
+        "box": [
+         519.5,
+         92.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Eslovenia?",
+       "a": "Liubliana",
+       "map": {
+        "id": "705",
+        "x": 540.3,
+        "y": 122.1,
+        "box": [
+         506.3,
+         99.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de España?",
+       "a": "Madrid",
+       "map": {
+        "id": "724",
+        "x": 489.7,
+        "y": 137.7,
+        "box": [
+         427,
+         117.2,
+         107.5,
+         67.2
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Estonia?",
+       "a": "Tallin",
+       "map": {
+        "id": "233",
+        "x": 568.8,
+        "y": 84.9,
+        "box": [
+         534.3,
+         65.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Finlandia?",
+       "a": "Helsinki",
+       "map": {
+        "id": "246",
+        "x": 569.3,
+        "y": 82.9,
+        "box": [
+         537.2,
+         47.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Francia?",
+       "a": "París",
+       "map": {
+        "id": "250",
+        "x": 506.5,
+        "y": 114.3,
+        "box": [
+         471.5,
+         99.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Grecia?",
+       "a": "Atenas",
+       "map": {
+        "id": "300",
+        "x": 565.9,
+        "y": 144.5,
+        "box": [
+         531.3,
+         121.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Hungría?",
+       "a": "Budapest",
+       "map": {
+        "id": "348",
+        "x": 552.9,
+        "y": 118.1,
+        "box": [
+         518.9,
+         97,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Irlanda?",
+       "a": "Dublín",
+       "map": {
+        "id": "372",
+        "x": 482.6,
+        "y": 101.9,
+        "box": [
+         442,
+         79.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Islandia?",
+       "a": "Reikiavik",
+       "map": {
+        "id": "352",
+        "x": 439.2,
+        "y": 71.8,
+        "box": [
+         412,
+         47.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Italia?",
+       "a": "Roma",
+       "map": {
+        "id": "380",
+        "x": 534.8,
+        "y": 133.6,
+        "box": [
+         499.7,
+         111.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Letonia?",
+       "a": "Riga",
+       "map": {
+        "id": "428",
+        "x": 567,
+        "y": 91.8,
+        "box": [
+         533.2,
+         70,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Liechtenstein?",
+       "a": "Vaduz",
+       "map": {
+        "id": "438",
+        "x": 526.4,
+        "y": 119.1,
+        "box": [
+         491.3,
+         97,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Lituania?",
+       "a": "Vilna",
+       "map": {
+        "id": "440",
+        "x": 570.2,
+        "y": 98.1,
+        "box": [
+         531,
+         74.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Luxemburgo?",
+       "a": "Luxemburgo",
+       "map": {
+        "id": "442",
+        "x": 517,
+        "y": 112.2,
+        "box": [
+         481.8,
+         89.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Macedonia del Norte?",
+       "a": "Skopie",
+       "map": {
+        "id": "807",
+        "x": 559.5,
+        "y": 133.3,
+        "box": [
+         525.2,
+         112.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Malta?",
+       "a": "La Valeta",
+       "map": {
+        "id": "470",
+        "x": 540.3,
+        "y": 150.3,
+        "box": [
+         504.9,
+         128.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Moldavia?",
+       "a": "Chisináu",
+       "map": {
+        "id": "498",
+        "x": 580.2,
+        "y": 119.4,
+        "box": [
+         543.6,
+         97.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Mónaco?",
+       "a": "Mónaco",
+       "map": {
+        "id": "492",
+        "x": 520.6,
+        "y": 128.5,
+        "box": [
+         485.4,
+         106.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Montenegro?",
+       "a": "Podgorica",
+       "map": {
+        "id": "499",
+        "x": 553.5,
+        "y": 132.1,
+        "box": [
+         518.7,
+         109.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Noruega?",
+       "a": "Oslo",
+       "map": {
+        "id": "578",
+        "x": 529.9,
+        "y": 83.6,
+        "box": [
+         474.8,
+         10.9,
+         149.7,
+         93.6
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Países Bajos?",
+       "a": "Ámsterdam",
+       "map": {
+        "id": "528",
+        "x": 513.6,
+        "y": 104.5,
+        "box": [
+         479.5,
+         83.1,
+         70.4,
+         44
+        ]
+       },
+       "note": "La capital es Ámsterdam, pero el gobierno está en La Haya."
+      },
+      {
+       "q": "¿Cuál es la capital de Polonia?",
+       "a": "Varsovia",
+       "map": {
+        "id": "616",
+        "x": 558.4,
+        "y": 104.9,
+        "box": [
+         517.9,
+         83.8,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Portugal?",
+       "a": "Lisboa",
+       "map": {
+        "id": "620",
+        "x": 474.6,
+        "y": 142.4,
+        "box": [
+         404.2,
+         116.7,
+         94.3,
+         58.9
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Reino Unido?",
+       "a": "Londres",
+       "map": {
+        "id": "826",
+        "x": 499.7,
+        "y": 106.9,
+        "box": [
+         455.2,
+         73.6,
+         71.9,
+         45
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de República Checa?",
+       "a": "Praga",
+       "map": {
+        "id": "203",
+        "x": 540.1,
+        "y": 110.9,
+        "box": [
+         507.8,
+         89.7,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Rumania?",
+       "a": "Bucarest",
+       "map": {
+        "id": "642",
+        "x": 572.5,
+        "y": 126.6,
+        "box": [
+         534.2,
+         100.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Rusia?",
+       "a": "Moscú",
+       "map": {
+        "id": "643",
+        "x": 604.5,
+        "y": 95.1,
+        "box": [
+         520,
+         -70,
+         480,
+         300
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de San Marino?",
+       "a": "San Marino",
+       "map": {
+        "id": "674",
+        "x": 534.6,
+        "y": 128,
+        "box": [
+         499.5,
+         106.1,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Serbia?",
+       "a": "Belgrado",
+       "map": {
+        "id": "688",
+        "x": 556.8,
+        "y": 125.5,
+        "box": [
+         522.9,
+         105.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Suecia?",
+       "a": "Estocolmo",
+       "map": {
+        "id": "752",
+        "x": 550.2,
+        "y": 85.2,
+        "box": [
+         503.5,
+         48.7,
+         91.3,
+         57
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Suiza?",
+       "a": "Berna",
+       "map": {
+        "id": "756",
+        "x": 520.7,
+        "y": 119.6,
+        "box": [
+         487.6,
+         98,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Ucrania?",
+       "a": "Kiev",
+       "map": {
+        "id": "804",
+        "x": 584.8,
+        "y": 109.8,
+        "box": [
+         549,
+         91.1,
+         74.9,
+         46.8
+        ]
+       }
+      }
+     ],
+     "notes": [
+      "## Capitales de Europa",
+      "45 países.",
+      "- **Albania** — Tirana",
+      "- **Alemania** — Berlín",
+      "- **Andorra** — Andorra la Vieja",
+      "- **Austria** — Viena",
+      "- **Bélgica** — Bruselas",
+      "- **Bielorrusia** — Minsk",
+      "- **Bosnia y Herzegovina** — Sarajevo",
+      "- **Bulgaria** — Sofía",
+      "- **Chipre** — Nicosia",
+      "- **Ciudad del Vaticano** — Ciudad del Vaticano",
+      "- **Croacia** — Zagreb",
+      "- **Dinamarca** — Copenhague",
+      "- **Eslovaquia** — Bratislava",
+      "- **Eslovenia** — Liubliana",
+      "- **España** — Madrid",
+      "- **Estonia** — Tallin",
+      "- **Finlandia** — Helsinki",
+      "- **Francia** — París",
+      "- **Grecia** — Atenas",
+      "- **Hungría** — Budapest",
+      "- **Irlanda** — Dublín",
+      "- **Islandia** — Reikiavik",
+      "- **Italia** — Roma",
+      "- **Letonia** — Riga",
+      "- **Liechtenstein** — Vaduz",
+      "- **Lituania** — Vilna",
+      "- **Luxemburgo** — Luxemburgo",
+      "- **Macedonia del Norte** — Skopie",
+      "- **Malta** — La Valeta",
+      "- **Moldavia** — Chisináu",
+      "- **Mónaco** — Mónaco",
+      "- **Montenegro** — Podgorica",
+      "- **Noruega** — Oslo",
+      "- **Países Bajos** — Ámsterdam",
+      "- **Polonia** — Varsovia",
+      "- **Portugal** — Lisboa",
+      "- **Reino Unido** — Londres",
+      "- **República Checa** — Praga",
+      "- **Rumania** — Bucarest",
+      "- **Rusia** — Moscú",
+      "- **San Marino** — San Marino",
+      "- **Serbia** — Belgrado",
+      "- **Suecia** — Estocolmo",
+      "- **Suiza** — Berna",
+      "- **Ucrania** — Kiev"
+     ]
+    },
+    {
+     "id": "oc",
+     "num": "Oceanía",
+     "date": "14 países",
+     "title": "Capitales de Oceanía",
+     "cards": [
+      {
+       "q": "¿Cuál es la capital de Australia?",
+       "a": "Canberra",
+       "map": {
+        "id": "036",
+        "x": 914.2,
+        "y": 348,
+        "box": [
+         808.1,
+         262.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Fiyi?",
+       "a": "Suva",
+       "map": {
+        "id": "242",
+        "x": 995.6,
+        "y": 300.4,
+        "box": [
+         957.3,
+         275.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Islas Marshall?",
+       "a": "Majuro",
+       "map": {
+        "id": "584",
+        "x": 976.1,
+        "y": 230.3,
+        "box": [
+         934.9,
+         204.4,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Islas Salomón?",
+       "a": "Honiara",
+       "map": {
+        "id": "090",
+        "x": 944.3,
+        "y": 276.2,
+        "box": [
+         912.9,
+         253.6,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Kiribati?",
+       "a": "Tarawa Sur",
+       "map": {
+        "id": "296",
+        "x": 980.5,
+        "y": 246.3,
+        "box": [
+         943,
+         225.3,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Micronesia?",
+       "a": "Palikir",
+       "map": {
+        "id": "583",
+        "x": 939.3,
+        "y": 230.8,
+        "box": [
+         866.5,
+         197.1,
+         103.5,
+         64.7
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Nauru?",
+       "a": "Yaren",
+       "map": {
+        "id": "520",
+        "x": 963.7,
+        "y": 251.5,
+        "box": [
+         928.6,
+         229.4,
+         70.4,
+         44
+        ]
+       },
+       "note": "Nauru no tiene capital oficial; Yaren es donde está el gobierno."
+      },
+      {
+       "q": "¿Cuál es la capital de Nueva Zelanda?",
+       "a": "Wellington",
+       "map": {
+        "id": "554",
+        "x": 985.5,
+        "y": 364.7,
+        "box": [
+         918.3,
+         333.1,
+         120.5,
+         75.3
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Palau?",
+       "a": "Ngerulmud",
+       "map": {
+        "id": "585",
+        "x": 874,
+        "y": 229.2,
+        "box": [
+         834,
+         213.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Papúa Nueva Guinea?",
+       "a": "Port Moresby",
+       "map": {
+        "id": "598",
+        "x": 908.8,
+        "y": 276.3,
+        "box": [
+         877.1,
+         246,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Samoa?",
+       "a": "Apia",
+       "map": {
+        "id": "882",
+        "x": 22.9,
+        "y": 288.4,
+        "box": [
+         -13.3,
+         266.2,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Tonga?",
+       "a": "Nukualofa",
+       "map": {
+        "id": "776",
+        "x": 13.3,
+        "y": 308.7,
+        "box": [
+         -20.4,
+         283.5,
+         70.4,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Tuvalu?",
+       "a": "Funafuti",
+       "map": {
+        "id": "798",
+        "x": 997.8,
+        "y": 273.7,
+        "box": [
+         962.8,
+         251.7,
+         70,
+         44
+        ]
+       }
+      },
+      {
+       "q": "¿Cuál es la capital de Vanuatu?",
+       "a": "Port Vila",
+       "map": {
+        "id": "548",
+        "x": 967.5,
+        "y": 299.3,
+        "box": [
+         932.1,
+         275.2,
+         70.4,
+         44
+        ]
+       }
+      }
+     ],
+     "notes": [
+      "## Capitales de Oceanía",
+      "14 países.",
+      "- **Australia** — Canberra",
+      "- **Fiyi** — Suva",
+      "- **Islas Marshall** — Majuro",
+      "- **Islas Salomón** — Honiara",
+      "- **Kiribati** — Tarawa Sur",
+      "- **Micronesia** — Palikir",
+      "- **Nauru** — Yaren",
+      "- **Nueva Zelanda** — Wellington",
+      "- **Palau** — Ngerulmud",
+      "- **Papúa Nueva Guinea** — Port Moresby",
+      "- **Samoa** — Apia",
+      "- **Tonga** — Nukualofa",
+      "- **Tuvalu** — Funafuti",
+      "- **Vanuatu** — Port Vila"
+     ]
+    }
+   ]
+  }
+ ]
+}
